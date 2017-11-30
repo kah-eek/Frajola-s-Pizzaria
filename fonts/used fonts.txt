@@ -1,0 +1,17 @@
+// Para o título das páginas
+
+fonte: Hemi Head Font
+justificativa: relacionada à década de 1960
+link: http://www.1001fonts.com/hemi-head-426-font.html
+
+/* *************************************************** */
+
+// Para o conteúdo geral das página
+
+fonte: Carved Rock Font
+
+justificativa: relacionada ao tema rock and roll, sendo de uma forma não tão marcante, uma fonte mais descontraída
+ 
+link: http://www.1001fonts.com/carved-rock-font.html
+
+/* *************************************************** */

@@ -1,0 +1,151 @@
+/* CSS */
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+/* X BUTTON TO CLOSE MODAL */
+.closeModal{
+	margin-left: 850px;
+	background-color: #FF6E40;
+	border-radius: 10px 10px 10px 10px;
+
+	/* TEXT */
+ 	font-size: 25px;
+ 	color: #212121;
+ 	text-shadow: 1px 1px 4px #000;
+}
+
+/* PIZZA'S PICTURE AND TITLE BOX */
+#pictureAndTitleBox{
+	width: 450px;
+	height: 400px;
+	float: left;
+	border-radius: 25px 25px 25px 25px;
+	background-color: #d84315; 
+}
+#pictureBox{
+	transition: 2s;
+	width: 450px;
+	height: 400px; /*350*/
+	border-radius: 25px 25px 25px 25px;
+	background-color: #d84315;
+}
+#pictureBox img{
+	width: 430px;
+	height: 380px;
+	transition: 1s;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	border-radius: 25px 25px 25px 25px;
+}
+#pictureBox img:hover{
+	transition: 1s;
+	height: 337px;
+	background-color: #d84315; 
+}
+#pictureBox:hover{
+	transition: 2s;
+	height: 350px;
+	background-color: #d84315; 
+	box-shadow: 1px 1px 25px #000000;
+}
+#pictureBox:hover + #titleBox{
+	transition: 2s;
+	height: 40px;
+	opacity: 1.0;
+	box-shadow: 1px 1px 25px #000000;
+}
+#titleBox{
+	transition: 1s;
+	width: 450px;
+	height: 0px;
+	opacity: 0.0;
+	padding-top: 10px;
+	border-radius: 0px 0px 25px 25px;
+	background-color: #F4511E;
+
+	/* TEXT */
+	text-transform: uppercase;;
+	font-size: 18px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	color: #000000;
+	text-shadow: 1px 1px 3px #000000;
+	text-align: center;
+}
+
+/* CATEGORY, SUBCATEGORY AND DESCRIPTION BOX */
+#categorySubcategoryAndDescription{
+	width: 400px;
+	height: 350px;
+	padding: 25px;
+	float: left;
+	/*background-color: green;*/
+}
+.dataBox{
+	transition: 2s;
+	width: 380px;
+	height: 35px;
+	padding-top: 15px;
+	border-radius: 15px 15px 15px 15px;
+	/*background-color: yellow;*/
+	box-shadow: 1px 1px 50px #F4511E;
+	margin-top: 25px;
+
+	/* TEXT */
+	text-align: center;
+	font-size: 18px;
+	color: #F4511E;
+	text-shadow: 1px 1px 2px #000000;
+}
+.dataBox:hover{
+	transition: 2s;
+	letter-spacing: 2px;
+	color: #000000;
+	background-color: #F4511E;
+	box-shadow: 1px 1px 25px #000000;
+}
+#descriptionBox{
+	transition: 2s;
+	width: 380px;
+	height: 180px;
+	padding-top: 15px;
+	border-radius: 15px 15px 15px 15px;
+	box-shadow: 1px 1px 50px #F4511E;
+	/*background-color: yellow;*/
+	margin-top: 25px;
+
+	/* TEXT */
+	text-align: center;
+	word-break: break-all;
+	font-size: 18px;
+	color: #F4511E;
+	text-shadow: 1px 1px 2px #000000;
+}
+#descriptionBox:hover{
+	transition: 2s;
+	letter-spacing: 2px;
+	color: #000000;
+	background-color: #F4511E;
+	box-shadow: 1px 1px 25px #000000;
+}
+
+/* DETAILS BOX */
+#detailsBox{
+	transition: 2s;
+	width: 900px;
+	height: 205px;
+	padding-top: 25px;
+	float: left;
+	border-radius: 0px 0px 50px 50px;
+	/*background-color: purple;*/
+
+	/* TEXT */
+	text-align: center;
+	word-break: break-all;
+	font-size: 18px;
+	color: #F4511E;
+	text-shadow: 1px 1px 2px #000000;
+}

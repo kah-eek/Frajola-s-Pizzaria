@@ -1,0 +1,107 @@
+/* CSS */
+
+/* FONT'S IMPORT*/
+@font-face{
+	font-family: CarvedRock;
+	src: url("../../fonts/carved-rock/CarvedRock.ttf");
+}
+
+/* GENERAL TAGS */
+*{	
+	font-family: CarvedRock;
+	padding: 0px;
+	margin: 0px;
+}
+ /* MODAL'S CLOSE BUTTON */
+ #closeModalBox{
+ 	width:900px;
+    height:40px;
+    margin:auto;
+    /*background-color: aqua;*/
+    margin-top:100px;
+    border-radius: 50px 50px 0px 0px; 
+ }
+ #closeModalBox a{
+ 	padding-left: 850px;
+ 	font-size: 28px;
+ 	color: #FF6E40;
+ 	text-shadow: 1px 1px 5px #000;
+ }
+/* MAIN CONTENT */
+#mainContentBox{
+	width: 900px;
+	height: 610px;
+	background-color: #E0E0E0;
+	border-radius: 0px 0px 50px 50px;
+}
+/* BOXES THAT DIVIDES DATA */
+#leftBox{
+	width: 450px;
+	height: 540px;
+	float: left;
+	padding-top: 70px;
+	/*background-color: orange;*/
+	border-radius: 0px 0px 0px 50px;
+}
+#rightBox{
+	width: 450px;
+	height: 540px;
+	float: right;
+	padding-top: 70px;
+	/*background-color: yellow;*/
+	border-radius: 0px 0px 50px 0px;
+}
+/* TEXT FIELD AND LABELS */
+.textFieldAndLabel{
+	transition: 1s;
+	width: 400px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 50px;
+	/*background-color: aqua;*/
+}
+.textFieldAndLabel:hover{
+	transition: 2s;
+	box-shadow: 1px 1px 40px #212121;
+}
+.textFieldAndLabel:hover > .label{
+	transition: 2s;
+	background-color: #212121;
+	color: #eeeeee;
+}
+.textFieldAndLabel:hover > .textField{
+	transition: 3s;
+	color: #000000;
+	text-shadow: 1px 1px 2px #FF6E40;
+}
+/* LABEL */
+.label{
+	transition: 3s;
+	width: 400px;
+	height: 20px;
+	/*background-color: green;*/
+
+	/* TEXT */
+	text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    font-weight:bold;
+    text-shadow: 1px 1px 1px #000000;
+}
+/* TEXT FIELD */
+.textField{
+	transition: 4s;
+	width: 400px;
+	height: 20px;
+	/*background-color: brown;*/
+	padding-top: 10px;
+
+	/* TEXT */
+	text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    font-weight:bold;
+    color: #FF6E40;
+    text-shadow: 1px 1px 1px #000000;
+}

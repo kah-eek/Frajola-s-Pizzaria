@@ -1,0 +1,286 @@
+<!-- 60's -->
+              
+              <!-- The Rolling Stones -->
+              <div class="StripBox">
+                  <span class="textShadow">ANOS 60</span>
+                  <div id="StripBox_NO_SHADOW_TRS">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            The Rolling Stones é uma banda de rock britânica formada em Londres em 1962 e considerada um dos maiores e mais bem sucedidos grupos musicais de todos os tempos. Ao lado dos Beatles, são considerados a banda mais importante da chamada Invasão Britânica ocorrida nos anos 1960. A banda e seus membros ocuparam posição de destaque nas mudanças musicais e comportamentais dos anos 1960 e são frequentemente relacionados com a contracultura, rebeldia e juventude.<br><br>
+
+                            Os Rolling Stones são um dos grupos musicais mais bem sucedidos da história e já venderam mais de 240 milhões de álbuns no mundo inteiro.
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT THE ROLLING STONES -->
+                            <div class="label">
+                                <strong>THE ROLLING STONES</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT THE ROLLING STONES -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/60/theRollingStones.jpg" title="The Rolling Stones" alt="Foto preto e branco de quando jovens os participantes da banda The Rolling Stones">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- The Beatles -->
+              <div class="StripBox">
+                  <div id="StripBox_NO_SHADOW_TB">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            
+                            The Beatles foi uma banda de rock, formada na cidade de Liverpool (Inglaterra), em 1956. Faziam parte deste grupo os seguintes músicos: John Lennon (vocalista, guitarrista e compositor), George Harrison (guitarrista e vocalista), Paul Mc Cartney (baixista, compositor e vocal) e Ringo Star (baterista). O nome inicial da banda era Silver Beetles, fazendo uma referência a besouros. Porém, por sugestão de John Lennon, a banda passou a se chamar The Beatles, pois a palavra inglesa "beat" significa rítmo ou batida.<br><br>
+
+                            Fizeram sucesso mundial com suas músicas, principalmente na década de 1960. O sucesso deve-se ao estilo revolucionário que implantaram no cenário musical.
+
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT THE THE BEATLES -->
+                            <div class="label">
+                                <strong>THE BEATLES</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT THE BEATLES -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/60/theBeatles.jpg" title="The Beatles" alt="Foto preto e branco de quando jovens os participantes da banda The Beatles">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- Elvis Presley -->
+              <div class="StripBox">
+                  <div id="StripBox_NO_SHADOW_EP">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            
+                            Elvis Aaron Presley nasceu em 8 de janeiro de 1935, na cidade de East Tupelo (Mississipi – Estados Unidos). Foi um dos mais populares cantores de Rock’n and Roll de todos os tempos. É considerado por muitos o pai deste ritmo musical.<br>
+
+                            Quando era jovem, Elvis assistia cultos da Igreja Pentecostal de sua cidade. Gostava muito das canções gospel que eram cantadas na igreja. Durante a juventude, também entrou em contato com a música country e com o blues (típico da região sul dos Estados Unidos). Estes ritmos musicais marcaram a formação musical de Elvis Presley.<br>
+
+                            Ainda na adolescência aprendeu a tocar guitarra e chegou a ganhar um concurso de jovens talentos musicais em sua cidade. 
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT ELVIS PRESLEY -->
+                            <div class="label">
+                                <strong>ELVIS PRESLEY</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT ELVIS PRESLEY -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/60/elvisPresley.jpg" title="Elvis Presley" alt="Foto preto e branco de Elvis Presley quando jovem">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- 70's -->
+              
+              <!-- AC/DC -->
+              <div class="StripBox">
+                  <span class="textShadow">ANOS 70</span>
+                  <div id="StripBox_NO_SHADOW_ACDC">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            AC/DC é uma banda de rock formada em Sydney, Austrália em 1973, pelos irmãos Malcolm e Angus Young, sendo considerada umas das maiores e mais bem sucedidas bandas de rock de todos os tempos.<br><br>
+
+                            No documentário produzido pelo programa Behind The Music a banda explica que precisava de um nome para sua primeira apresentação, os irmãos estavam nesta busca há várias semanas. Ao olhar para máquina de costura da irmã Margaret Young os Youngs observaram as iniciais "AC/DC".Os irmãos sentiram que esse nome simbolizava a energia da banda, um som puro, sem efeitos e o amor deles pela música. "AC/DC" é uma abreviação que significa "corrente alternada/corrente contínua"
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT THE AC/DC -->
+                            <div class="label">
+                                <strong>AC/DC</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT AC/DC -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/70/ACDC.jpg" title="AC/DC" alt="Foto dos participantes da banda ACDC">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- Sex Pistols -->
+              <div class="StripBox">
+                  <div id="StripBox_NO_SHADOW_SP">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            
+                            Sex Pistols foi uma banda inglesa de punk rock formada em Londres em 1975, considerada responsável por ter começado o movimento punk no Reino Unido e ter influenciado muitos músicos de punk rock e rock alternativo. Ainda que originalmente a banda tenha durado apenas dois anos e meio, lançando apenas quatro singles e um álbum de estúdio — Never Mind the Bollocks, Here's the Sex Pistols —, os Sex Pistols são considerados por alguns críticos uma das mais influentes bandas da história da música popular.<br><br>
+
+                            A banda era composta originalmente pelo vocalista Johnny Rotten, o guitarrista Steve Jones, o baterista Paul Cook e o baixista Glen Matlock. Matlock foi substituído por Sid Vicious no início de 1977.
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT SEX PISTOLS -->
+                            <div class="label">
+                                <strong>SEX PISTOLS</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT SEX PISTOLS -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/70/SexPistols.jpg" title="Sex Pistols" alt="Foto preto e branco dos participantes da banda Sex Pistols quando jovens">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- Black Sabbath -->
+              <div class="StripBox">
+                  <div id="StripBox_NO_SHADOW_BS">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            
+                            Black Sabbath foi uma banda de heavy metal britânica formada no ano de 1968 em Birmingham pelo guitarrista e principal compositor Tony Iommi, o baixista e principal letrista Geezer Butler, o vocalista Ozzy Osbourne e o baterista Bill Ward. Desde o início, a banda passou por diversas mudanças na formação, com o guitarrista Iommi sendo o único presente em todas elas. Originalmente era uma banda de blues rock, que logo adotou o nome Black Sabbath e começou a incorporar ocultismo e histórias de terror em suas letras, além de usar guitarras com baixa afinação. Apesar desses dois temas serem comuns, eles também compunham canções que tratavam de instabilidade social, corrupção política, os perigos do abuso de drogas e profecias apocalípticas resultantes de guerras.
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT BLACK SABBATH -->
+                            <div class="label">
+                                <strong>BLACK SABBATH</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT BLACK SABBATH -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/70/BlackSabbath.png" title="Black Sabbath" alt="Foto preto e branco dos participantes da banda Black Sabbath">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- 80's -->
+              
+              <!-- Guns N' Roses -->
+              <div class="StripBox">
+                  <span class="textShadow">ANOS 80</span>
+                  <div id="StripBox_NO_SHADOW_GR">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            Guns N' Roses (às vezes abreviado como G N' R ou GnR) é uma banda de hard rock formada em Los Angeles, Califórnia (EUA), em 1985. A banda já lançou seis álbuns de estúdio, três EPs e um álbum ao vivo.<br><br>
+
+                            A banda já vendeu mais de 100 milhões de cópias em todo o mundo, sendo cerca de 43 milhões somente nos Estados Unidos. O seu álbum de estreia lançado em 1987, Appetite for Destruction, vendeu cerca de 33 milhões de cópias no mundo todo, sendo certificado 18 vezes platina pela RIAA (Associação da Indústria de Gravação da América), se tornando o álbum de estreia mais vendido da história da música. A formação atual inclui o vocalista e pianista Axl Rose, os guitarristas Slash e Richard Fortus, o baixista Duff McKagan, o baterista Frank Ferrer e os tecladistas Dizzy Reed e Melissa Reese.
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT THE GUNS N' ROSES -->
+                            <div class="label">
+                                <strong>GUNS N' ROSES</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT GUNS N' ROSES -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/80/gunsNRoses.jpg" title="Guns N' Roses" alt="Foto dos participantes da banda Guns N' Roses">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->
+              
+              <!-- Nirvana -->
+              <div class="StripBox">
+                  <div id="StripBox_NO_SHADOW_NV">
+                    <div class="strip">
+                        
+                        <!-- DESCRIPTION -->
+                        <div class="description">
+                            
+                            Nirvana foi uma banda norte-americana de rock, formada pelo vocalista e guitarrista Kurt Cobain e pelo baixista Krist Novoselic em Aberdeen no ano de 1987, que obteve grande sucesso em meio ao movimento grunge de Seattle no início dos anos 90. Vários bateristas passaram pelo Nirvana, sendo o que ficou mais tempo na banda foi Dave Grohl, que entrou em 1990.<br><br>
+
+                            No final da década de 1980 o Nirvana se estabeleceu como parte da cena grunge de Seattle, lançando seu primeiro álbum, Bleach, pela gravadora independente Sub Pop em 1989.
+
+                        </div>
+                        <!-- ****************** -->
+                        
+                        <!-- LABEL AND PICTURE -->
+                        <div class="labelAndPicture">
+                            
+                            <!-- LABEL ABOUT NIRVANA -->
+                            <div class="label">
+                                <strong>NIRVANA</strong> 
+                            </div>
+                        
+                            <!-- PICTURE ABOUT NIRVANA -->
+                            <div class="picture">
+                                <img class="img" src="./pictures/decades/80/nirvana.jpg" title="Black Sabbath" alt="Foto preto e branco dos participantes da banda Black Sabbath">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div> 
+              <!-- ***************************************************************************** -->

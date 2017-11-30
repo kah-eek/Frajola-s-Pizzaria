@@ -1,0 +1,6 @@
+CREATE TABLE tbl_item_sobre_pizzaria(
+idItemPagina INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+titulo VARCHAR(120) NOT NULL,
+imagem VARCHAR(340) NOT NULL,
+descricao VARCHAR(600) NOT NULL,
+ativo TINYINT(1) NOT NULL);

@@ -1,0 +1,412 @@
+/* CSS */
+
+/* FONT'S IMPORT*/
+@font-face{
+    font-family: CarvedRock;
+    src: url("../../fonts/carved-rock/CarvedRock.ttf");
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: #000000;
+    font-family: CarvedRock; 
+}
+/* ------- EMPLOYEE'S DATA MODAL -----*/
+ .modalContainer{
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.7);
+    /*background-color: aqua;*/
+    position:fixed;
+    display:none;
+ }
+ .modal{
+    width:900px;
+    height:650px;
+    background-color:#ffffff;
+    margin:auto;
+    margin-top:100px;
+    border-radius: 50px 50px 50px 50px; 
+    box-shadow: 1px 1px 100px #FF6E40;
+ }
+#employeesDataModalBox{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.8);
+}
+#employeesDataModalBox:target{
+    display: block;
+}
+#employeesDataModal{
+    width: 1000px;
+    height: 650px;
+    background-color: #EEEEEE;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    margin-top: -650px;
+    box-shadow: 5px 5px 25px #FF3D00;
+    border-radius: 80px 0px 50px 50px;
+}
+#employeesDataModalBox:target > #employeesDataModal{
+    margin-top: 120px;
+    transition: 2s;
+    /*NAO ESTA FUNCIONADO O TRANSITION !!! POR QUÊ ???*/
+}
+#closeModal{
+    transition: 1s;
+    margin-left: 97%;
+
+    /* TEXT */
+    font-family: CarvedRock;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px #212121;
+    color: #FF6E40;
+
+}
+#closeModal:hover{
+    transition: 1s;
+    text-shadow: 2px 1px 5px #212121;
+}
+#labelAndDataBox{
+    width: 680px;
+    height: 610px;
+    float: left;
+    border-radius: 0px 0px 25px 0px;
+    /*background-color: brown;*/
+}
+#profilePictureBox{
+    transition: 2s;
+    float: left;
+    width: 300px;
+    height: 300px;
+    border-radius: 25px 0px 25px 0px;
+    margin-right: 10px;
+    /*background-color: aqua;*/
+}
+#profilePictureBox:hover{
+    transition: 1s;
+    box-shadow: 1px 1px 15px #FF3D00;
+}
+#profilePicture{
+    width: 300px;
+    height: 300px;
+    border-radius: 25px 0px 25px 0px;
+}
+.labelAndData{
+    transition: 2s;
+    width: 660px;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 20px;
+    float: left;
+    border-radius: 5px 5px 5px 5px;
+    /*background-color: green;*/    
+}
+.labelAndData:hover{
+    transition: 1s;
+    background-color: #eee;
+    box-shadow: 1px 1px 10px #000000;
+
+}
+.labelAndData:hover > .labelModal{
+    transition: 2s;
+    color: #000;
+    text-shadow: 1px 1px 1px #FF6E40;
+}
+.labelAndData:hover > .dataModal{
+    transition: 2s;
+    color: #000;
+}
+.labelModal{
+    font-family: CarvedRock;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #FF6E40;
+}
+.dataModal{
+    font-family: CarvedRock;
+    font-size: 18px;
+    color: #212121;
+    padding-left: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /*text-shadow: 1px 1px 2px #FF6E40;*/
+}
+/* ------------- HEADER --------------*/
+header{
+    width: 1200px;
+    height: 100px;
+    background-color: #FF6E40;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px 20px 0px 0px;
+}
+#headerTitle{
+    width: 1075px;
+    height: 70px;
+/*    background-color: green;*/
+    float: left;
+    border-radius: 20px 0px 0px 0px;
+    padding-left: 25px;
+    padding-top: 30px;
+    
+    /* TEXT */
+    text-align: left;
+    font-size: 34px;
+    font-weight:bold;
+    text-shadow: 1px 1px 1px #000000;
+}
+#headerLogo{
+    width: 100px;
+    height: 100px;
+/*    background-color: red;*/
+    float: left;
+    border-radius: 0px 20px 0px 0px;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+}
+/* ------------- NAVEGATION ------------*/
+nav{
+    width: 1200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #90A4AE;
+}
+.sectionItem{
+    width: 225px;
+    height: 200px;
+    float: left;
+/*    background-color: blueviolet;*/
+}
+.sectionItemImgBox{
+    width: 150px;
+    height: 125px;
+    padding-top: 25px;
+    padding-left: 75px;
+/*    background-color: antiquewhite;*/
+}
+.sectionItemImg{
+    width: 100px;
+    height: 100px;
+/*    background-color: brown;*/
+}
+.sectionItemLabelBox{
+    width: 250px;
+    height: 40px;
+    padding-top: 10px;
+/*    border: solid #000000;*/
+/*    background-color: dodgerblue;*/
+    
+    /* TEXT */
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #FF6E40;
+}
+#welcomeBox{
+    width: 300px;
+    height: 200px;
+    float: left;
+    /*background-color: greenyellow;*/
+}
+#welcomeField{
+    width: 300px;
+    height: 45px;
+    /*background-color: cadetblue;*/
+    word-break: break-all;
+    padding-top: 65px;
+    
+    /* TEXT */
+    text-align: center;
+    font-size: 19px;
+    text-shadow: 1px 1px 1px #000000;
+}
+#welcomeFieldName{
+    width: 300px;
+    height: 45px;
+    /*background-color: cadetblue;*/
+    word-break: break-all;
+    
+    /* TEXT */
+    text-align: center;
+    font-size: 19px;
+    text-shadow: 1px 1px 1px #000000;
+}
+#btnLogoutBox{
+    width: 150px;
+    height: 50px;
+/*    background-color: blueviolet;*/
+    padding-left: 150px;
+}
+#btnLogout{
+    background-color: transparent;
+    width: 100px;
+    height: 25px;
+    border: 0px;    
+    
+    /* TEXT */
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #FF6E40;
+}
+/* ------------- MAIN CONTENT ------------*/
+#main{
+    width: 1200px;
+    min-height: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #E0E0E0;    
+}
+#showUsersBox{
+    width: 1180px;
+    height: 705px;
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+/*    background-color: aqua;*/
+}
+.tableLabel{
+    width: 350px;
+    height: 55px;
+    float: left;
+    padding-top: 25px;
+    background-color: #FF8A65;
+    border: solid 1px #212121;
+    
+    /* TEXT */
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #000000;
+    word-break: break-all;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #212121;
+}
+.tableData{
+    width: 350px;
+    height: 55px;
+    float: left;
+    padding-top: 25px;
+    background-color: #BDBDBD;
+    border: solid 1px #212121;
+    
+    /* TEXT */
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #000000;
+    word-break: break-all;
+    text-shadow: 1px 1px 1px #212121;
+}
+.iconLabelBox{
+    width: 117px;
+    height: 55px;
+    float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 25px;
+    border: solid 1px #212121;
+    background-color: #FF8A65;
+    
+    /* TEXT */
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #212121;
+}
+.iconBox{
+    width: 117px;
+    height: 55px;
+    float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 25px;
+    border: solid 1px #212121;
+    background-color: #BDBDBD;
+    
+    /* TEXT */
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #212121;
+}
+.iconLabel{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 5px;
+/*    background-color: aquamarine;*/
+}
+.iconImg{
+    width: 30px;
+    height: 30px;
+}
+.addUserButtonBox{
+    transition: 1s;
+    width: 80px;
+    height: 70px;
+    padding-left: 1120px;
+/*    background-color: darkseagreen;*/
+}
+#addUserButtonImg{
+    width: 65px;
+    height: 65px;
+    transition: 1s;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+#addUserButtonImg:hover{
+    transition: 1s;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    
+}
+/* ------------- FOOTER ------------*/
+footer{
+    width: 1200px;
+    height: 50px;
+    background-color: #FF6E40;
+    border-radius: 0px 0px 20px 20px;
+    padding-top:30px;
+    
+    /* TEXT */
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #212121;
+}
+
+/* ------------- GENERAL ---------------*/
+a{
+  text-decoration: none;
+  color: #212121;
+  font-family: CarvedRock, "Chaparral Pro";
+}

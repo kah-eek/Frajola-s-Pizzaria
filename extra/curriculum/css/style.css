@@ -1,0 +1,72 @@
+/*CSS*/
+body{
+	padding: 0px;
+	margin: 0px;
+	background-color: #ccc;
+}
+#curriculo{
+	width:974px;
+	height:1400px;
+	background-color: #ffffff;
+	border:outset 1px #000000;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top: 10px;*/
+}
+#nome{
+	font-family:arial;
+	font-size:22px;
+	font-weight:bold;
+	text-align:center;
+	margin-top:80px;
+}
+#descricao_candto{
+	font-family:arial;
+	font-size:18px;
+	text-align:center;
+}
+#topicos_lista{
+	margin-top:45px;
+	font-family:arial;
+	font-size:18px;
+	text-align:left;
+	list-style-type:none;
+	line-height: 35px;
+}
+#objetivo_lista li{
+	/*float:left;*/
+	display:inline-block;
+	font-family:arial;
+	font-size: 18px;
+	line-height:75px;
+}
+#objetivo_bold_li{
+	font-family:arial;
+	font-size: 18px;
+	font-weight:bold;
+}
+.descricao{
+	text-align:left;
+	font-family:arial;
+	font-weight: bold;
+	font-size: 18px;
+	padding-left: 40px;
+	line-height:75px;
+}
+.topicos_lista_marcador{
+	font-family:arial;
+	font-size: 18px;
+	line-height:25px;
+	padding-left:60px;
+}
+.lista_academica{
+	font-family:arial;
+	font-size: 18px;
+	list-style-type:none;
+}
+#hist_prof_subdesc{
+	font-family:arial;
+	font-size: 18px;
+	line-height:40px;
+	padding-left:40px;
+}

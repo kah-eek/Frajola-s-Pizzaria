@@ -1,0 +1,328 @@
+/* CSS */
+
+/* FONT'S IMPORT*/
+@font-face{
+    font-family: CarvedRock;
+    src: url("../../fonts/carved-rock/CarvedRock.ttf");
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: #000000;
+    font-family: CarvedRock;
+}
+/* ------------- HEADER --------------*/
+header{
+    width: 1200px;
+    height: 100px;
+    background-color: #FF6E40;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px 20px 0px 0px;
+}
+#headerTitle{
+    width: 1075px;
+    height: 70px;
+/*    background-color: green;*/
+    float: left;
+    border-radius: 20px 0px 0px 0px;
+    padding-left: 25px;
+    padding-top: 30px;
+
+    /* TEXT */
+    text-align: left;
+    font-size: 34px;
+    font-weight:bold;
+    text-shadow: 1px 1px 1px #000000;
+}
+#headerLogo{
+    width: 100px;
+    height: 100px;
+/*    background-color: red;*/
+    float: left;
+    border-radius: 0px 20px 0px 0px;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+}
+/* ------------- NAVEGATION ------------*/
+nav{
+    width: 1200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #90A4AE;
+}
+.sectionItem{
+    width: 225px;
+    height: 200px;
+    float: left;
+/*    background-color: blueviolet;*/
+}
+.sectionItemImgBox{
+    width: 150px;
+    height: 125px;
+    padding-top: 25px;
+    padding-left: 75px;
+/*    background-color: antiquewhite;*/
+}
+.sectionItemImg{
+    width: 100px;
+    height: 100px;
+/*    background-color: brown;*/
+}
+.sectionItemLabelBox{
+    width: 250px;
+    height: 40px;
+    padding-top: 10px;
+/*    border: solid #000000;*/
+/*    background-color: dodgerblue;*/
+
+    /* TEXT */
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #FF6E40;
+}
+#welcomeBox{
+    width: 300px;
+    height: 200px;
+    float: left;
+    /*background-color: greenyellow;*/
+}
+#welcomeField{
+    width: 300px;
+    height: 45px;
+    /*background-color: cadetblue;*/
+    word-break: break-all;
+    padding-top: 65px;
+
+    /* TEXT */
+    text-align: center;
+    font-size: 19px;
+    text-shadow: 1px 1px 1px #000000;
+}
+#welcomeFieldName{
+    width: 300px;
+    height: 45px;
+    /*background-color: cadetblue;*/
+    word-break: break-all;
+
+    /* TEXT */
+    text-align: center;
+    font-size: 19px;
+    text-shadow: 1px 1px 1px #000000;
+}
+#btnLogoutBox{
+    width: 150px;
+    height: 50px;
+/*    background-color: blueviolet;*/
+    padding-left: 150px;
+}
+#btnLogout{
+    background-color: transparent;
+    width: 100px;
+    height: 25px;
+    border: 0px;
+
+    /* TEXT */
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #FF6E40;
+}
+/* ------------- MAIN CONTENT ------------*/
+#main{
+    width: 1200px;
+    min-height: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #E0E0E0;
+    /*background-image: url("../../pictures/background/guitarBackgorund.jpg");
+    background-size: cover;
+    background-attachment: fixed;*/
+}
+#showItemsBox{
+    width: 1040px;
+    height: 950px;
+    padding-top: 25px;
+    padding-left: 80px;
+    padding-right: 80px;
+    /*background-color: green;*/
+}
+#mainBox{
+    width: 680px;
+    height: 750px;
+    margin-right: auto;
+    margin-left: auto;
+    /*background-color: gray;*/
+}
+.labelAndTextFieldBox{
+    transition: 2s;
+    width: 380px;
+    height: 85px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px 10px 10px 10px;
+    /*background-color: #fff;*/
+}
+.labelAndTextFieldBox:hover{
+    transition: 1s;
+    box-shadow: 1px 1px 20px #fff;
+    background-color: #BDBDBD;
+}
+.label{
+    width: 380px;
+    height: 20px;
+    text-align: center;
+    /*background-color: #fff;*/
+
+    /*TEXT*/
+    text-transform:uppercase;
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #FF6E40;
+}
+.textField{
+    width: 365px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+/*    background-color: #212;*/
+}
+.textField input{
+    width: 340px;
+    height: 20px;
+}
+.textField select{
+    width: 340px;
+    height: 20px;
+}
+.textField img{
+    width: 48px;
+    height: 48px;
+}
+
+/* SUBCATEGORIES ITEMS ARE */
+#subcategoryItemsArea{
+    width: 365px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+    /*background-color: #212;*/
+}
+#subcategoryItemsArea select{
+    width: 340px;
+    height: 20px;
+}
+/*-----------------------*/
+
+ /* TEXT AREA */
+#textAreaBox{
+    width: 670px;
+    height: 180px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    /*background-color: pink;*/
+}
+#textAreaBox textarea{
+    resize: none;
+
+    /*TEXT*/
+    text-align: justify;
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+}
+#textAreaLabel{
+    width: 100px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    /*background-color: #000;*/
+
+    /*TEXT*/
+    text-transform:uppercase;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px #FF6E40;
+}
+/* STATUS ICON BOX */
+#statusIconBox{
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+/*    background-color: #fff;*/
+}
+ /* BUTTONS */
+.addItemButtonBox{
+    transition: 1s;
+    width: 80px;
+    height: 70px;
+    padding-left: 1120px;
+    /*background-color: red;*/
+}
+#btnSubmit{
+
+    width: 65px;
+    height: 65px;
+    background-color: #FF8A65;
+    border: 0px;
+    border-radius: 50px 50px 50px 50px;
+
+    /* TEXT */
+    font-size: 25px;
+
+    transition: 1s;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#btnSubmit:hover{
+    transition: 1s;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+
+    /* TEXT */
+    font-size: 34px;
+
+}
+/* ------------- FOOTER ------------*/
+footer{
+    width: 1200px;
+    height: 50px;
+    background-color: #FF6E40;
+    border-radius: 0px 0px 20px 20px;
+    padding-top:30px;
+
+    /* TEXT */
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #212121;
+}
+
+/* ------------- GENERAL ---------------*/
+a{
+  text-decoration: none;
+  color: #212121;
+  font-family: CarvedRock, "Chaparral Pro";
+}

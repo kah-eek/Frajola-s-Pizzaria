@@ -1,0 +1,251 @@
+<!-- ITEMS BOX 0-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
+
+            <!-- ITEMS BOX 1-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
+
+            <!-- ITEMS BOX 2-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
+
+            <!-- ITEMS BOX 3-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
+
+            <!-- ITEMS BOX 4-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
+
+            <!-- ITEMS BOX 5-->
+            <div class="itemsBox_CENTER_CONTENT">
+              <!-- PIZZA IMAGE -->
+              <div class="imgBackground_ITEMS_BOX">
+                <div class="pizzaImg_ITEMS_BOX">
+                  <img class="pizzaIconImg_ITEMS_BOX" src="pictures/pizzas/pizza0.jpg" title="Pizza Portuguesa" alt="Pizza Portuguesa">
+                </div>
+              </div>
+              <!-- DESCRIPTIONS -->
+              <div class="descArea_ITEMS_BOX">
+                <div class="descLabel_ITEMS_BOX">
+                  Nome: Portuguesa
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  <!--
+                  <details>
+                    <summary>Descrição</summary>
+                      Molho,
+                      mussarela,
+                      presunto,
+                      ovos,
+                      palmito,
+                      rodelas de tomate,
+                      cebola,
+                      azeitonas e orégano.
+                  </details>
+                  -->
+                  Descrição:
+                </div>
+
+                <div class="descLabel_ITEMS_BOX">
+                  Preço: R$ 32,00
+                </div>
+
+                <div class="detailsDescLabel_ITEMS_BOX">
+                  Detalhes
+                </div>
+              </div>
+            </div>
+            <!-- ******** -->
