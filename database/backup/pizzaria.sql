@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.10, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pizzaria
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.20-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -723,13 +723,12 @@ DROP TABLE IF EXISTS `view_analise_marketing_clicks`;
 /*!50001 DROP VIEW IF EXISTS `view_analise_marketing_clicks`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `view_analise_marketing_clicks` (
-  `idProduto` tinyint NOT NULL,
-  `titulo` tinyint NOT NULL,
-  `preco` tinyint NOT NULL,
-  `avaliacao` tinyint NOT NULL,
-  `click` tinyint NOT NULL
-) ENGINE=MyISAM */;
+/*!50001 CREATE VIEW `view_analise_marketing_clicks` AS SELECT 
+ 1 AS `idProduto`,
+ 1 AS `titulo`,
+ 1 AS `preco`,
+ 1 AS `avaliacao`,
+ 1 AS `click`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -740,28 +739,26 @@ DROP TABLE IF EXISTS `view_mostrar_produtos`;
 /*!50001 DROP VIEW IF EXISTS `view_mostrar_produtos`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `view_mostrar_produtos` (
-  `idProduto` tinyint NOT NULL,
-  `titulo` tinyint NOT NULL,
-  `preco` tinyint NOT NULL,
-  `descricao` tinyint NOT NULL,
-  `detalhes` tinyint NOT NULL,
-  `imagemProduto` tinyint NOT NULL,
-  `idSubcategoria` tinyint NOT NULL,
-  `ativo` tinyint NOT NULL,
-  `subcategoria` tinyint NOT NULL,
-  `idCategoria` tinyint NOT NULL,
-  `categoria` tinyint NOT NULL,
-  `avaliacao` tinyint NOT NULL,
-  `idAvaliacao` tinyint NOT NULL
-) ENGINE=MyISAM */;
+/*!50001 CREATE VIEW `view_mostrar_produtos` AS SELECT 
+ 1 AS `idProduto`,
+ 1 AS `titulo`,
+ 1 AS `preco`,
+ 1 AS `descricao`,
+ 1 AS `detalhes`,
+ 1 AS `imagemProduto`,
+ 1 AS `idSubcategoria`,
+ 1 AS `ativo`,
+ 1 AS `subcategoria`,
+ 1 AS `idCategoria`,
+ 1 AS `categoria`,
+ 1 AS `avaliacao`,
+ 1 AS `idAvaliacao`*/;
 SET character_set_client = @saved_cs_client;
 
 --
 -- Final view structure for view `view_analise_marketing_clicks`
 --
 
-/*!50001 DROP TABLE IF EXISTS `view_analise_marketing_clicks`*/;
 /*!50001 DROP VIEW IF EXISTS `view_analise_marketing_clicks`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
@@ -780,7 +777,6 @@ SET character_set_client = @saved_cs_client;
 -- Final view structure for view `view_mostrar_produtos`
 --
 
-/*!50001 DROP TABLE IF EXISTS `view_mostrar_produtos`*/;
 /*!50001 DROP VIEW IF EXISTS `view_mostrar_produtos`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
@@ -804,4 +800,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-30 11:22:02
+-- Dump completed on 2017-11-30 20:43:19
