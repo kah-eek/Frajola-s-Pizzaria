@@ -15,7 +15,7 @@
 
     //GETTING EMPLOYEE'S DATA
     $employeesData = getEmployeeById($_SESSION["employeesId"]);
-    
+
     // CHECK IF EXISTS LOGGED USER AND LEVEL IS ALLOW (ALLOW "administrador" AND "operador básico")
     if (!isset($_SESSION["employeesId"])) { // NOT EXISTS USER LOGGED
 
@@ -54,7 +54,7 @@
 
             // GETTING ITEM FROM DB
             $item = mysql_fetch_array(getItem($_GET["id"]));
-            
+
             // CHECK STATUS CAME FROM DB AND TRANSFORM DATA TO SET IN URL ("true" OR "false")
             $active = transformStatusToURL($item["ativo"]);
 
@@ -74,21 +74,21 @@
         <script src="js/jquery.js"></script>
 
         <script type="text/javascript">
-            
+
             //SET STATUS' LINK TITLE WHEN OPENS PAGE
             var status = $(".statusLink").attr('title');
 
-            
+
             $(document).ready(function() {
 
-                // ACTIVE OR DESACTIVE ITEM'S STATUS 
+                // ACTIVE OR DESACTIVE ITEM'S STATUS
 
-                //STATUS' LINK LISTENER 
+                //STATUS' LINK LISTENER
                 $(".statusLink").click(function() {
-                  
+
                     //STATUS' LINK TITLE
                     status = $(".statusLink").attr('title');
-                   
+
 
                     //CHECK IF STATUS' TITLE IS EQUALS desativado
                     if(status =='Desativado'){
@@ -114,11 +114,11 @@
                         //ALTERS LINK'S TITLE ( = desativado)
                         $(".statusLink").attr({'title':'Desativado'});
                     }
-                    
+
                     //SET alt ATTRIBUTE ON STATUS' IMAGE
                     $("#statusImage").attr({"alt":"Representação gráfica do status do item. Status atual: "+$(".statusLink").attr('title')});
 
-                });  
+                });
 
                 // REMOVE BUTTON'S DEFAULT SUBMITE AND SEND DATA ACROSS ajax
                 $("#frmAddDecadeItem").submit(function(event){
@@ -154,23 +154,23 @@
                         }
                     });
 
-                }); 
+                });
 
 
-                // CHECK IF CATEGORY WAS SELECT 
+                // CHECK IF CATEGORY WAS SELECT
                 // $("#category_js").
 
             });
 
         </script>
-        
+
 
     </head>
     <body>
 
         <!-- PROCESS DATA TO INSERT AND ADD INTO DB -->
         <div id="controller">
-            
+
         </div>
 
 
@@ -382,7 +382,7 @@
                             </div>
                             <div id="subcategoryItemsArea">
 
-                                <select name="cbxSubcategory" required> 
+                                <select name="cbxSubcategory" required>
                                     <!-- onfocus="loadItem('#subcategoryItemsArea');"  -->
 
                                     <!-- DEFAULT VALUE -->
@@ -393,7 +393,7 @@
                                         // LOAD SUBCATEGORIES INTO DB
 
                                         // GET ITEMS FROM DATABASE (mysql_query)
-                                        $size = getSubcategories(0); /*$_POST["cbxCategory"]*/
+                                        $size = getSubcategories(1); /*$_POST["cbxCategory"]*/
 
                                         // LOAD ITEMS INTO OPTIONS
                                         for($i = 0; $i < mysql_num_rows($size); $i++){
@@ -427,57 +427,57 @@
                             <div class="textField">
 
                               <div id="statusIconBox">
-                                  
+
                                 <!-- CHECK IF mode EQUALS update OR add-->
                                 <?php
                                     if($_GET["mode"] == "update"){//CHECK MODE AT URL
 
                                             // CHECK IF IS TO ACTIVE STATUS OR NOT ACTIVE AS DATA CAME FROM DB
-                                            
+
                                             // FILL STATUS AS DATA CAME FROM DB
                                             if ($item['ativo']==1){//ENABLE STATUS
-                                                
+
                                                 //LOAD GREEN IMAGE
                                                 $statusImageBD = "../pictures/icons/greenCheck48x48.png";
-                                                
+
                                                 //SET STATUS LINK TITLE
                                                 $statusLinkTitle = "Ativado";
-                                            
+
                                             }else{//DISABLE STATUS
-                                                
+
                                                 //LOAD GRAY IMAGE
                                                 $statusImageBD = "../pictures/icons/grayCheck48x48.png";
-                                                
+
                                                 //SET STATUS LINK TITLE
                                                 $statusLinkTitle = "Desativado";
                                             }
-                                        
-                                            
+
+
                                                 // IMAGE ABOUT ITEM'S STATUS
-                                  
+
                                                 // LOAD IMAGE AS CAME FROM DB
                                             ?>
                                                 <a class="statusLink" title="<?php echo($statusLinkTitle) ?>">
                                                     <img id="statusImage" src="<?php echo($statusImageBD); ?>" title="<?php echo($statusLinkTitle); ?>"  alt="Representação gráfica do status do item. Status atual: <?php echo($statusLinkTitle); ?>">
                                                 </a>
                                             <?php
-                                            
 
-                                        
-                                        
+
+
+
                                     }else if($_GET["mode"] == "add"){//CHECK MODE AT URL
-                                        
+
                                         //LOAD DEFAULT DATA
-                                        
+
                                         //LOAD GRAY IMAGE
                                         $statusImageBD = "../pictures/icons/grayCheck48x48.png";
-                                        
+
                                         //SET STATUS LINK TITLE
                                         $statusLinkTitle = "Desativado";
-                                        
-                                  
+
+
                                             // IMAGE ABOUT ITEM'S STATUS
-                                  
+
                                             // LOAD IMAGE AS CAME FROM DB
                                         ?>
                                         <a class="statusLink" title="<?php echo($statusLinkTitle) ?>">
@@ -490,7 +490,7 @@
                               </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 

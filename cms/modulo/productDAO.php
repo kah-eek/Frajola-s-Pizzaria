@@ -12,18 +12,26 @@
 			return mysql_query($sql);
 		}
 
-		function getRanking($productsNumber){
-			$sql = "SELECT * FROM view_analise_marketing_clicks ORDER BY click DESC LIMIT $productsNumber;";
+		function getMarketingData($numberOfProducts){
+			$sql = "SELECT * FROM view_analise_marketing_clicks LIMIT $numberOfProducts;";
 
-			$query = mysql_query($sql);
+			return mysql_query($sql);
+		}
 
-			$result = mysql_fetch_array($query);
+		function deleteCategory($categoryId){
+			$sql = "DELETE FROM tbl_categoria WHERE idCategoria = $categoryId;";
 
-			return $result;
+			// CHECK IF DELETE WAS OK INTO DATABASE
+			if (mysql_query($sql)) {
+				return true;
+			}else{
+				return false;
+			}
+
 		}
 
 		function getMaxClicks(){
-			$sql = "SELECT MAX(click) AS clicks FROM view_analise_marketing_clicks;";
+			$sql = "SELECT SUM(click) AS clicks FROM view_analise_marketing_clicks;";
 
 			$result = mysql_query($sql);
 
@@ -55,7 +63,7 @@
 
 			$parcent = mysql_fetch_array($result);
 
-			return $parcent["procentagem"];
+			return $parcent["porcentagem"];
 		}
 
 		function deleteItem($itemId){
@@ -81,7 +89,30 @@
 			return mysql_query($sql);
 		}
 
-		function addItem($title, $price, $description, $details, $pictureObj, $subcategoryId, $active){
+		function addCategory($category){
+			$sql = "INSERT INTO tbl_categoria (categoria) VALUES('$category');";
+
+			// CHECK IF INSERT WAS OK INTO DATABASE
+			if (mysql_query($sql)) {
+				return true;
+			}else {
+				return false;
+			}
+
+		}
+
+		function addSubcategory($categoryId, $subcategory){
+				$sql = "INSERT INTO tbl_subcategoria (idCategoria, subcategoria) VALUES($categoryId, '$subcategory');";
+
+				// CHECK IF INSERT WAS OK INTO DATABASE
+				if (mysql_query($sql)) {
+					return true;
+				}else{
+					return false;
+				}
+		}
+
+		function addItem($title, $price, $description, $details, $pictureObj, $subcategoryId, $evaluation, $active){
 
 			// GETTING PICTURE'S NAME
 			$pictureName = basename($pictureObj["name"]);
@@ -106,11 +137,17 @@
 				if (move_uploaded_file($pictureObj["tmp_name"], $readyToUploadPicture)) { // IT WAS MOVED WITH SUCCESSS
 
 					// SQL INSERT FOR RUN INTO DATABASE
-					$sql = "INSERT INTO tbl_produto (titulo, preco, descricao, detalhes, imagemProduto, idSubcategoria, ativo) VALUES('$title', $price, '$description', '$details', '$readyToUploadPicture', $subcategoryId, $active);";
+					$sqlTblProduto = "INSERT INTO tbl_produto (titulo, preco, descricao, detalhes, imagemProduto, idSubcategoria, ativo) VALUES('$title', $price, '$description', '$details', '$readyToUploadPicture', $subcategoryId, $active);";
 
-					// CHECK IF INSERT WAS OK
-					if(mysql_query($sql)){// IT IS OKAY
-						return tre;
+					// CHECK IF INSERT WAS OK - tbl_produto
+					if(mysql_query($sqlTblProduto)){// IT IS OKAY
+
+						$sqlTblAvaliacao = "INSERT INTO tbl_avaliacao (idProduto, avaliacao) VALUES(".mysql_insert_id().", $evaluation);";
+
+						// CHECK IF INSERT WAS OK - tbl_avaliacao
+						if (mysql_query($sqlTblAvaliacao)) {
+							return true;
+						}
 					}else{// IT ISN'T OKAY
 						return false;
 					}
@@ -127,7 +164,7 @@
 		}
 
 
-		function updateItem($itemId, $title, $price, $description, $details, $pictureObj, $subcategoryId, $active){
+		function updateItem($itemId, $title, $price, $description, $details, $pictureObj, $subcategoryId, $evaluation, $active){
 
 			// GETTING PICTURE'S NAME
 			$pictureName = basename($pictureObj["name"]);
@@ -139,10 +176,11 @@
 			if (empty($pictureName)) {// IT ISN'T TO UPDATE
 
 				// UPDATE ITEM BUT NOT UPDATES THE IMAGE
-				$sql = "UPDATE tbl_produto SET titulo = '$title', preco = $price, descricao = '$description', detalhes = '$details', idSubcategoria = $subcategoryId, ativo = $active WHERE idProduto = $itemId;";
+				$sqlTblProduto = "UPDATE tbl_produto SET titulo = '$title', preco = $price, descricao = '$description', detalhes = '$details', idSubcategoria = $subcategoryId, ativo = $active WHERE idProduto = $itemId;";
+				$sqlTblAvaliacao = "UPDATE tbl_avaliacao SET avaliacao = $evaluation WHERE idProduto = $itemId;";
 
 				// CHECK IF INSERT WAS OK
-				if (mysql_query($sql)) {
+				if (mysql_query($sqlTblProduto) && mysql_query($sqlTblAvaliacao)) {
 					return true;
 				}else{
 					return false;
@@ -165,14 +203,15 @@
 					if (move_uploaded_file($pictureObj["tmp_name"], $readyToUploadPicture)) {// IT WAS MOVED WITH SUCCESSS
 
 						// UPDATE FULL ITEM
-						$sql = "UPDATE tbl_produto SET titulo = '$title', preco = $price, descricao = '$description', detalhes = '$details', imagemProduto = '$readyToUploadPicture', idSubcategoria = $subcategoryId, ativo = $active WHERE idProduto = $itemId;";
+						$sqlTblProduto = "UPDATE tbl_produto SET titulo = '$title', preco = $price, descricao = '$description', detalhes = '$details', imagemProduto = '$readyToUploadPicture', idSubcategoria = $subcategoryId, ativo = $active WHERE idProduto = $itemId;";
+						$sqlTblAvaliacao = "UPDATE tbl_avaliacao SET avaliacao = $evaluation WHERE idProduto = $itemId;";
 
-							// CHECK IF INSERT WAS OK
-							if (mysql_query($sql)) {
-								return true;
-							}else{
-								return false;
-							}
+						// CHECK IF INSERT WAS OK
+						if (mysql_query($sqlTblProduto) && mysql_query($sqlTblAvaliacao)) {
+							return true;
+						}else{
+							return false;
+						}
 
 					}else{// IT WASN'T MOVED WITH SUCCESS
 						return false;

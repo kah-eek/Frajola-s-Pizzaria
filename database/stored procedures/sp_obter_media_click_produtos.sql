@@ -6,13 +6,13 @@ DELIMITER >>
 CREATE PROCEDURE sp_obter_media_click_produtos(OUT mediaClicks FLOAT)
 	BEGIN
     
-		DECLARE maxClick INT;
+		DECLARE clickSums INT;
     
-		/* ARMAZENA O VALOR MAXIMO DE CLICKS */
-        SET maxClick = (SELECT MAX(click) FROM view_analise_marketing_clicks);
+		/* ARMAZENA O VALOR DA SOMA DE TODOS OS CLICKS */
+        SET clickSums = (SELECT SUM(click) FROM view_analise_marketing_clicks);
         
         /* DEFINE A QUANTIA DA MEDIA DE CLICKS  */
-        SET mediaClicks = (maxClick / (SELECT COUNT(idProduto) FROM view_analise_marketing_clicks));
+        SET mediaClicks = (clickSums / (SELECT COUNT(idProduto) FROM view_analise_marketing_clicks));
         
     END >>
 

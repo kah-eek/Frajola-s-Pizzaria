@@ -1,0 +1,73 @@
+/*CSS*/
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+/*FIELDS' AND INPUTS' AREA*/
+#fieldsAndInputsArea{
+  width: 500px;
+  height: 200px;
+  /*padding-top: 60px;*/
+  /*padding-left: 150px;*/
+  border-radius: 50px 50px 50px 50px;
+  background-color: #212121;
+}
+
+/*DIVIDATION BOX 1*/
+#dividationBox1{
+  width: 350px;
+  height: 120px;
+  padding-top: 50px;
+  padding-left: 150px;
+  /*border-radius: 50px 50px 50px 50px;*/
+  /*background-color: orange;*/
+}
+#dividationBox1 select{
+  width: 200px;
+  height: 30px;
+  border-radius: 10 px 10px 10px 10px;
+  margin-bottom: 25px;
+
+  /*TEXT*/
+  font-weight:bold;
+}
+
+/*DIVIDATION BOX 2*/
+#dividationBox2{
+  width: 300px;
+  height: 30px;
+  padding-left: 200px;
+  /*border-radius: 50px 50px 50px 50px;*/
+  /*background-color: purple;*/
+}
+
+/*TEXT FIELD - ADD NEW CATEGORY*/
+#addNewSubcategoryTextField{
+  width: 200px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 1px 15px #cccccc;
+
+  /*TEXT*/
+  text-shadow: 1px 1px #FF6E40;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*BUTTON - ADD NEW CATEGORY*/
+#addNewSubcategoryButton{
+  width: 100px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 1px 15px #cccccc;
+  background-color: #cccccc;
+
+  /*TEXT*/
+  color: #000000;
+  text-shadow: 1px 1px #ffffff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}

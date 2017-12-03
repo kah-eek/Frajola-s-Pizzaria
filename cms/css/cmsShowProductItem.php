@@ -5,7 +5,12 @@
 
   // IMPORTS
   require_once("../modulo/productDAO.php");
+  require_once("../modulo/dbFunctions.php");
   // ***************************
+
+  // CONNECT TO DATABASE
+  connectToDB();
+  // *********************
 
 ?>
 
@@ -20,6 +25,32 @@
     padding: 0px;
     margin: 0px;
 }
+/* ------- PRODUCT'S DATA MODAL -----*/
+ .modalContainer{
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.3);
+    /*background-color: aqua;*/
+    position:fixed;
+    display:none;
+    z-index: 999;
+ }
+ .modal{
+    transition: 5s;
+    width:500px;
+    height:200px;
+    background-color:#212121;
+    margin:auto;
+    margin-top:300px;
+    /* border: groove 5px #FF6E40; */
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 1px 1px 1000px #000000;
+ }
+ .modal:hover{
+   transition-duration: 2s;
+   box-shadow: 1px 1px 100px #FF6E40;
+ }
+ /* *********************************** */
 body{
     background-color: #000000;
     font-family: CarvedRock;
@@ -224,12 +255,13 @@ nav{
 }
 #showProductItemsBox{
     width: 1180px;
-    height: 305px;
+    min-height: 505px;
+    height: auto;
     padding-top: 25px;
     padding-left: 10px;
     padding-right: 10px;
     overflow: auto;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 #itemLabelBox{
     width: 1180px;
@@ -348,7 +380,7 @@ nav{
     padding-top: 20px;
     display: none;
     padding-left: 5px;
-/*    background-color: aqua;*/
+    /* background-color: aqua;*/
 }
 .addItemButtonBox{
     transition: 1s;
@@ -362,7 +394,7 @@ nav{
 /*CHART AREA*/
 #chartArea{
     width: 1100px;
-    height: 300px;
+    height: 400px;
     padding: 50px;
     /*background-color: green;*/
 }
@@ -413,11 +445,12 @@ nav{
 /*BOTTOM LABEL*/
 #chartBottomLabel{
     width: 140px;
-    height: 30px;
+    height: 17px;
+    padding-top: 13px;
     padding-right: 10px;
     border-right: solid 5px #FF6E40;
     border-bottom: solid 2px #FF6E40;
-    /*background-color: gray;*/
+    /* background-color: gray; */
 
     /*TEXT*/
     text-align: right;
@@ -432,49 +465,40 @@ nav{
   float: left;
   margin-left: 5px;
   border-radius: 0px 15px 0px 0px;
+  border-bottom: solid 2px #FF6E40;
   background-color: #cccccc;
 }
 
 /*CHART COLUMNS*/
+<?php
+    $size = getMarketingData(3);
+    for ($i = 0; $i < mysql_num_rows($size); $i++){
+      $items = mysql_fetch_array($size);
 
-/*COLUMN 01*/
-#chartColumn01{
-  width: 100px;
-  height:<?php
-            $items = getRanking(3);
-            echo(getColumnChart($items["click"][0]));
-         ?>;
-  margin-top: 250px; /* margin-top -= height*/
-  float: left;
-  margin-left: 140px;
-  border-radius: 10px 10px 0px 0px;
-  background-color: #212121;
-  box-shadow: 1px 1px 20px #FF6E40;
-}
+      // CHART HEIGHT
+      $height = getColumnChart($items["click"]);
 
-/*COLUMN 02*/
-#chartColumn02{
-  width: 100px;
-  height: 80px;
-  margin-top: 220px; /* margin-top -= height*/
-  float: left;
-  border-radius: 10px 10px 0px 0px;
-  margin-left: 180px;
-  background-color: #212121;
-  box-shadow: 1px 1px 20px #FF6E40;
-}
+      // CHECK IF $height IS SMALLER THAN 1 TO MULTIPLY IT FOR 10
+      if ($height < 1) {
+        $height = $height*100;
+      }
+    ?>
+      /*COLUMN <?php echo($i+1); ?>*/
+      #chartColumn0<?php echo($i+1); ?>{
+      width: 100px;
+      height:<?php echo($height."px"); ?>;
+      margin-top:<?php echo(300-$height)."px"; ?>; /* margin-top -= height*/
+      float: left;
+      margin-left: 165px;
+      border-radius: 10px 10px 0px 0px;
+      background-color: #212121;
+      box-shadow: 1px 1px 20px #FF6E40;
+      }
+    <?php
+    }
+?>;
 
-/*COLUMN 03*/
-#chartColumn03{
-  width: 100px;
-  height: 180px;
-  margin-top: 120px; /* margin-top -= height*/
-  float: left;
-  border-radius: 10px 10px 0px 0px;
-  margin-left: 180px;
-  background-color: #212121;
-  box-shadow: 1px 1px 20px #FF6E40;
-}
+
 
 /* ********************* */
 
@@ -507,11 +531,11 @@ nav{
 
 /* COLUMNS LABEL */
 .columnLabel{
-  width: 180px;
+  width: 100px;
   height: 30px;
-  margin-left: 100px;
+  margin-left: 165px;
   float: left;
-  /*background-color: yellow;*/
+  /* background-color: yellow; */
   padding-top: 10px;
 
   /*TEXT*/
@@ -522,13 +546,19 @@ nav{
 }
 /* ****************** */
 
+/* BUTTONS' AREA */
+#buttonsArea{
+  width: 1200px;
+  height: 65px;
+  /* background-color: green; */
+}
 .buttonsBox{
     width: 70px;
     height: 70px;
     float: left;
     padding-left: 20px;
     /*padding-left: 50px;*/
-    /*background-color: green;*/
+    /* background-color: green; */
 }
 .buttonsBox img{
     transition: 1s;

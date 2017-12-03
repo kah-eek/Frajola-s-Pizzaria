@@ -24,7 +24,7 @@ DELIMITER ;
 /*
 	TESTE DA STORED PROCEDURE
 */
-CALL sp_obter_margem_click_produtos(28, @parcent);
+CALL sp_obter_margem_click_produtos(1, @parcent);
 SELECT @parcent;
 
 /* ***************************************** */

@@ -52,10 +52,6 @@ DESC tbl_pizza_mes;
 
 DESC tbl_item_pizza_mes;
 
-SELECT * FROM tbl_produto;
+DESCRIBE tbl_subcategoria;
 
-SELECT * FROM view_mostrar_produtos;
-
-SELECT * FROM view_analise_marketing_clicks;
-
-
+SELECT * FROM tbl_subcategoria;

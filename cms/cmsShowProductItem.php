@@ -90,8 +90,29 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/cmsShowProductItem.php">
         <link rel="shortcut icon" type="image x-icon" href="../pictures/logo/logo.png">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/modal.js"></script>
     </head>
     <body>
+
+        <!-- SHOWS MODAL -->
+        <script type="text/javascript">
+          $(document).ready(function(){
+
+            $(".show").click(function(){
+              $(".modalContainer").slideToggle(1500);
+            });
+
+          });
+        </script>
+
+        <div class="modalContainer">
+          <div class="modal">
+          </div>
+        </div>
+        <!-- ***************************************************************************************************************** -->
+
+
         <!-- HEADER -->
         <header>
             <div id="headerTitle">
@@ -334,25 +355,28 @@
                     Produto
                   </div>
 
-                  <!-- COLUMN LABEL 01 -->
-                  <div class="columnLabel">
-                    <?php
-                      // GETTING PRODUCT'S TITLE 1
-                      $items = getRanking(3);
-                      echo($items["titulo"]);
+                  <!-- PRODUSTS' TITLE -->
+                  <?php
+
+                    // GETTING PRODUCTS ON RANKING
+                    $size = getMarketingData(3);
+
+                    // FILLING FIELD WITH PRODUCTS' TITLE
+                    for($i = 0; $i < mysql_num_rows($size); $i++){
+                      $items = mysql_fetch_array($size);
                     ?>
-                  </div>
+                        <!-- COLUMN LABEL <?php echo($i); ?> -->
+                        <div class="columnLabel">
+                          <?php
+                            // GETTING PRODUCT'S TITLE
+                            echo($items["titulo"]);
+                          ?>
+                        </div>
 
-                  <!-- COLUMN LABEL 02 -->
-                  <div class="columnLabel">
-                    Portuguesa
-                  </div>
-
-                  <!-- COLUMN LABEL 03 -->
-                  <div class="columnLabel">
-                    Tarantelo
-                  </div>
-
+                    <?php
+                    }
+                    // **********************************
+                  ?>
 
                 </div>
 
@@ -360,21 +384,24 @@
             <!-- **************************************** -->
 
             <!-- BUTTONS -->
+            <div id="buttonsArea">
 
-            <!-- ADMINISTRATE CATEGORIES AND SUBCATEGORIES -->
-            <div class="buttonsBox">
-                <a href="">
-                    <img src="../pictures/icons/blackCategoriesIcon.png" title="Administrar Categorias e Subcategorias" alt="Botão para administrar categorias e subcategorias">
-                </a>
-            </div>
+              <!-- ADMINISTRATE CATEGORIES AND SUBCATEGORIES -->
+              <div class="buttonsBox">
+                  <a class="show" href="#" onclick="modal(-1, 'optionsCategorySubcategory')">
+                      <img src="../pictures/icons/blackCategoriesIcon.png" title="Administrar Categorias e Subcategorias" alt="Botão para administrar categorias e subcategorias">
+                  </a>
+              </div>
 
-            <!-- ADD NEW PRODUCT -->
-            <div class="addItemButtonBox">
-                <a href="cmsAddProductItem.php?mode=add&status=false&id=-1">
-                    <img id="addItemButtonImg" src="../pictures/icons/fba300x300.png" title="Adicionar novo item" alt="Botão para adicionar novo item">
-                </a>
+              <!-- ADD NEW PRODUCT -->
+              <div class="addItemButtonBox">
+                  <a href="cmsAddProductItem.php?mode=add&status=false&id=-1">
+                      <img id="addItemButtonImg" src="../pictures/icons/fba300x300.png" title="Adicionar novo item" alt="Botão para adicionar novo item">
+                  </a>
+              </div>
+              <!-- ************************************************************************************************************* -->
+
             </div>
-            <!-- ************************************************************************************************************* -->
 
         </div>
         <!-- ***************************************************************************************************************** -->

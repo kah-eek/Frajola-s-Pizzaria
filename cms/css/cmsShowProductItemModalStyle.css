@@ -1,0 +1,63 @@
+/*CSS*/
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.categoryAndSubcategoryModalContainer{
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 50px 50px 50px 50px;
+  /*background-color: #212121;*/
+  z-index: 999;
+}
+
+/*CLOSE BUTTON AREA*/
+#closeButtonArea{
+  width: 20px;
+  height: 25px;
+  float: left;
+  margin-left: 460px;
+  /*padding-top: 5px;*/
+  padding-left: 15px;
+  border-radius: 50px 0px 50px 50px;
+  background-color: #FF3D00;
+}
+#closeButtonArea a{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 25px #000000;
+}
+
+/*BUTTONS' BOX*/
+#buttonsBox{
+  width: 500px;
+  height: 140px;
+  padding-top: 60px;
+  border-radius: 50px 50px 50px 50px;
+  /*background-color: aqua;*/
+}
+
+/*BUTTON*/
+.button{
+  transition-duration: 4s;
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-left: 65px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #ffffff;
+  border: solid 4px #cccccc;
+}
+.button img{
+  width: 80px;
+  height: 80px;
+}
+.button:hover{
+  transition-duration: 1s;
+  /*background-color: #212121;*/
+  box-shadow: 1px 1px 50px #ffffff;
+  border: solid 4px #FF3D00;
+}
