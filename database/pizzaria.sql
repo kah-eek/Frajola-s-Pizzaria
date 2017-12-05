@@ -29,7 +29,7 @@ CREATE TABLE `tbl_avaliacao` (
   PRIMARY KEY (`idAvaliacao`),
   KEY `idProduto` (`idProduto`),
   CONSTRAINT `tbl_avaliacao_ibfk_1` FOREIGN KEY (`idProduto`) REFERENCES `tbl_produto` (`idProduto`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_avaliacao` (
 
 LOCK TABLES `tbl_avaliacao` WRITE;
 /*!40000 ALTER TABLE `tbl_avaliacao` DISABLE KEYS */;
-INSERT INTO `tbl_avaliacao` VALUES (2,9,0);
+INSERT INTO `tbl_avaliacao` VALUES (2,9,0),(3,10,0),(4,11,0);
 /*!40000 ALTER TABLE `tbl_avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -590,7 +590,7 @@ CREATE TABLE `tbl_produto` (
   PRIMARY KEY (`idProduto`),
   KEY `fk_idSubcategoria_tbl_produto` (`idSubcategoria`),
   CONSTRAINT `fk_idSubcategoria_tbl_produto` FOREIGN KEY (`idSubcategoria`) REFERENCES `tbl_subcategoria` (`idSubcategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,7 +599,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (9,'BLACK SABBATH',32.00,'dasdsaddsaddasdsaddsaddasdsaddsaddasdsad','dasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsadds','../../pictures/pizzas/products/dfbb0126ab80de58d999173ebe199c71.jpg',2,1,6);
+INSERT INTO `tbl_produto` VALUES (9,'BLACK SABBATH',32.00,'dasdsa','dasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsadds','../../pictures/pizzas/products/dfbb0126ab80de58d999173ebe199c71.jpg',2,1,6),(10,'Teste2',66.00,'aaaaa','testetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetst','../../pictures/pizzas/products/c84e432feabfc64ee41ef9709b031d03.jpg',2,1,2),(11,'Teste03',23.00,'wwwww','xfcdftestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetsteteteteteste','../../pictures/pizzas/products/11ef6448ed11f7832c90d5aebbc77f21.jpg',3,1,0);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -800,4 +800,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-03 21:36:51
+-- Dump completed on 2017-12-05 21:12:28

@@ -28,8 +28,8 @@ CREATE TABLE `tbl_avaliacao` (
   `avaliacao` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idAvaliacao`),
   KEY `idProduto` (`idProduto`),
-  CONSTRAINT `tbl_avaliacao_ibfk_1` FOREIGN KEY (`idProduto`) REFERENCES `tbl_produto` (`idProduto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  CONSTRAINT `tbl_avaliacao_ibfk_1` FOREIGN KEY (`idProduto`) REFERENCES `tbl_produto` (`idProduto`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_avaliacao` (
 
 LOCK TABLES `tbl_avaliacao` WRITE;
 /*!40000 ALTER TABLE `tbl_avaliacao` DISABLE KEYS */;
-INSERT INTO `tbl_avaliacao` VALUES (1,1,5),(2,2,5),(3,3,5),(4,4,5);
+INSERT INTO `tbl_avaliacao` VALUES (2,9,0);
 /*!40000 ALTER TABLE `tbl_avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +53,7 @@ CREATE TABLE `tbl_categoria` (
   `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(180) NOT NULL,
   PRIMARY KEY (`idCategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `tbl_categoria` (
 
 LOCK TABLES `tbl_categoria` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria` DISABLE KEYS */;
-INSERT INTO `tbl_categoria` VALUES (1,'Pizzas Salgadas'),(2,'Pizzas Doces'),(3,'Pizzas Grandes'),(4,'Pizzas Pequenas');
+INSERT INTO `tbl_categoria` VALUES (1,'Pizzas Salgadas'),(2,'Pizzas Doces'),(3,'Pizzas Grandes'),(4,'Pizzas Pequenas'),(5,'teste'),(6,'Teste do Caique');
 /*!40000 ALTER TABLE `tbl_categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -590,7 +590,7 @@ CREATE TABLE `tbl_produto` (
   PRIMARY KEY (`idProduto`),
   KEY `fk_idSubcategoria_tbl_produto` (`idSubcategoria`),
   CONSTRAINT `fk_idSubcategoria_tbl_produto` FOREIGN KEY (`idSubcategoria`) REFERENCES `tbl_subcategoria` (`idSubcategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,7 +599,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (1,'Peperoni',42.00,'descrição teste','DETALHES Teste','../../pictures/pizzas/products/pepperoni.jpg',5,1,23),(2,'Portuguesa',42.00,'Port DESCRIÇÂO TESTE','Teste','../../pictures/pizzas/products/teste.jpg',4,1,30),(3,'dasdasd',66.00,'asdasd','asdsdasdasdasd','../../pictures/pizzas/products/14f80d0793305653a490ba1f05239f00.jpg',2,1,0),(4,'Brazuka',22.00,'para a família e os colegas o futebol','Pizza incrível servida com queijo junto a teste','../../pictures/pizzas/products/14f80d0793305653a490ba1f05239f00.jpg',2,1,2);
+INSERT INTO `tbl_produto` VALUES (9,'BLACK SABBATH',32.00,'dasdsaddsaddasdsaddsaddasdsaddsaddasdsad','dasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsadds','../../pictures/pizzas/products/dfbb0126ab80de58d999173ebe199c71.jpg',2,1,6);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -670,7 +670,7 @@ CREATE TABLE `tbl_subcategoria` (
   PRIMARY KEY (`idSubcategoria`),
   KEY `idCategoria` (`idCategoria`),
   CONSTRAINT `tbl_subcategoria_ibfk_1` FOREIGN KEY (`idCategoria`) REFERENCES `tbl_categoria` (`idCategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,7 +679,7 @@ CREATE TABLE `tbl_subcategoria` (
 
 LOCK TABLES `tbl_subcategoria` WRITE;
 /*!40000 ALTER TABLE `tbl_subcategoria` DISABLE KEYS */;
-INSERT INTO `tbl_subcategoria` VALUES (1,1,'Sabores Vegetarianas'),(2,1,'Sabores Tradicionais'),(3,1,'Sabores Peixe'),(4,1,'Sabores a Moda'),(5,1,'Sabores Carne');
+INSERT INTO `tbl_subcategoria` VALUES (1,1,'Sabores Vegetarianas'),(2,1,'Sabores Tradicionais'),(3,1,'Sabores Peixe'),(4,1,'Sabores a Moda'),(5,1,'Sabores Carne'),(6,2,'Teste da doce'),(7,6,'aaaaaaa');
 /*!40000 ALTER TABLE `tbl_subcategoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -768,7 +768,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_analise_marketing_clicks` AS select `v_mp`.`idProduto` AS `idProduto`,`v_mp`.`titulo` AS `titulo`,`v_mp`.`preco` AS `preco`,`v_mp`.`avaliacao` AS `avaliacao`,`prd`.`click` AS `click` from (`view_mostrar_produtos` `v_mp` join `tbl_produto` `prd` on((`prd`.`idProduto` = `v_mp`.`idProduto`))) */;
+/*!50001 VIEW `view_analise_marketing_clicks` AS select `v_mp`.`idProduto` AS `idProduto`,`v_mp`.`titulo` AS `titulo`,`v_mp`.`preco` AS `preco`,`v_mp`.`avaliacao` AS `avaliacao`,`prd`.`click` AS `click` from (`view_mostrar_produtos` `v_mp` join `tbl_produto` `prd` on((`prd`.`idProduto` = `v_mp`.`idProduto`))) order by `prd`.`click` desc */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -800,4 +800,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-30 20:43:19
+-- Dump completed on 2017-12-04 20:37:40

@@ -90,14 +90,26 @@
     <div id="controller">
     </div>
 
-
-    <!-- ABOUT PRODUCT - MODAL -->
-
     <script type="text/javascript">
       $(document).ready(function(){
+
+        // ABOUT PRODUCT - MODAL
         $(".show").click(function(){
           $(".modalContainer").slideToggle(1500);
         });
+
+        // SHOW MOBILE MENU WHEN IT WAS CLICKED
+        $(".smallMenuArea").click(function(){
+            $(".menuBar").attr({"style":"transform: rotate(360deg); -webkit-transform: rotate(360deg); transition: 1s;"})
+            $(".leftMenu").toggle(500);
+        });
+
+        // SHOW SITE MAP FOR ANOTHER PAGES
+        $(".logo").click(function(){
+          $(".menuItems").toggle("slow");
+        });
+
+
       });
     </script>
 
@@ -117,15 +129,23 @@
       <header>
         <nav>
 
+          <!-- MOBILE MENU -->
+          <div class="smallMenuArea" id="smallMenuArea">
+              <div class="menuBar"></div>
+              <div class="menuBar"></div>
+              <div class="menuBar"></div>
+          </div>
+          <!-- ****************************** -->
+
           <!-- FOR DESKTOP -->
-          <div id="logo">
+          <div class="logo" id="logo">
             <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
           </div>
 
           <!-- FOR MOBILE -->
-          <div id="logoMOBILE">
+          <!-- <div id="logoMOBILE">
             <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
-          </div>
+          </div> -->
 
           <div class="menuItems">
             <a href="aboutDecade.php">
@@ -212,7 +232,7 @@
         </div>
         <section>
           <!-- ************************** LEFT MENU **************************** -->
-          <div id="leftMenu">
+          <div class="leftMenu" id="leftMenu">
             <ul id="menuList_LEFT_MENU">
 
               <?php
