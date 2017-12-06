@@ -1,6 +1,6 @@
 <?php
 
-    // IMPORTS 
+    // IMPORTS
     require_once("../modulo/dbFunctions.php");
     // *******************
 
@@ -14,70 +14,82 @@
 
 
 
-    // FUNCTION
+    // FUNCTIONS
+
+    // GET ONLY ACTIVE PRODUCTS
     function getActiveProducts(){
-            $sql = "SELECT * FROM view_mostrar_produtos WHERE ativo = 1;";
-            
-            // CHECK IF QUERY WAS OK
-            if($query = mysql_query($sql)){
-                
-                
-                //PRODUCT LIST
-                $products = array();
-                
-                // LIST ALL PRODUCTS EXISTENTS INTO DATABASE
-                while($item = mysql_fetch_assoc($query)){
-                    $products[] = $item; 
-                }
-                
-                return json_encode($products);
+        $sql = "SELECT * FROM view_mostrar_produtos WHERE ativo = 1;";
+
+        // CHECK IF QUERY WAS OK
+        if($query = mysql_query($sql)){
+
+
+            //PRODUCT LIST
+            $products = array();
+
+            // LIST ALL PRODUCTS EXISTENTS INTO DATABASE
+            while($item = mysql_fetch_assoc($query)){
+                $products[] = $item;
             }
-            
-            echo($ERROR_MESSAGE);
+
+            return json_encode($products);
         }
+
+        echo($ERROR_MESSAGE);
+    }
     // ******************************************
-    
-    
+
+    // SET EVALUATION TO PRODUCT
+    function setEvaluate($itemId, $valuation){
+        $sql = "UPDATE tbl_avaliacao SET avaliacao = $evaluation WHERE idProduto = $ietmId;";
+
+        // CHECK IF UPDATE WAS OK
+        if (mysql_query($sql)) {
+
+        }
+    }
+    // ******************************************
+
+
     // CHECK IF METHOD IS GET FOR ALLOW USES THAT FUNCTONS
     /*
-        SELECT;
-        DELETE.
+        SELECT.
     */
     if($_SERVER["REQUEST_METHOD"] == "GET"){
-        
+
         // CHECK IF action VARIABLE EXISTS AND CHECK WHAT ACTION IT IS TO DO
         if(isset($_GET["action"])){
-            
+
             // KEEPING ACTION VALUE
             $action = $_GET["action"];
-            
-            
+
+
             // SHOW ALL ACTIVE PRODUCTS
             if($action == "getActiveProducts"){
-                
-                // PRINT ONE JSON WITH ACTIVE PRODUCTS 
+
+                // PRINT ONE JSON WITH ACTIVE PRODUCTS
                 echo(getActiveProducts());
-                
+
             }
-            
+
             // DELETE A PRODUCT ACCORDING ID REPORTED
-            else if($action == "delete"){
-                    
-                // CHECK IF EXISTS id AT URL
-                if(isset($_GET["id"])){
-                    echo($_GET["id"]);
-                }else{
-                    echo($ERROR_MESSAGE."DOESN'T EXISTS ID AT URL");
-                }
-            }
-            
-            
-            
-            
-            
-            
+            // else if($action == "delete"){
+            //
+            //     // CHECK IF EXISTS id AT URL
+            //     if(isset($_GET["id"])){
+            //         echo($_GET["id"]);
+            //     }else{
+            //         echo($ERROR_MESSAGE."DOESN'T EXISTS ID AT URL");
+            //     }
+            // }
+
+
+
+
+
+
         }
-        
+
     }
 
 ?>

@@ -756,6 +756,97 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Dumping routines for database 'pizzaria'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `sp_obter_id_produto_do_ranking` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obter_id_produto_do_ranking`(IN classificacaoProduto INT, OUT _idProduto INT)
+BEGIN
+        
+        DECLARE i INT DEFAULT 1;
+        DECLARE click INT DEFAULT (SELECT MAX(click) FROM view_analise_marketing_clicks);
+        DECLARE counter INT DEFAULT 0;
+            
+        WHILE i < COUNT(idProduto) DO
+        		
+			IF (counter = classificacaoProduto) THEN
+				SELECT idProduto INTO _idProduto FROM view_analise_marketing_clicks;
+            END IF;
+            
+            SET counter = counter + 1;
+            SET i = i + 1;
+            
+        END WHILE;
+		
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_obter_margem_click_produtos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obter_margem_click_produtos`(IN maxClicksNumber INT, OUT parcent FLOAT)
+BEGIN
+		
+        DECLARE maxClick INT;
+        DECLARE percent INT;
+        
+        SET maxClick = (SELECT MAX(click) FROM view_analise_marketing_clicks);
+        
+        SET parcent = TRUNCATE(((maxClick*maxClicksNumber)/100), 2);
+        
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_obter_media_click_produtos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obter_media_click_produtos`(OUT mediaClicks FLOAT)
+BEGIN
+    
+		DECLARE clickSums INT;
+    
+		/* ARMAZENA O VALOR DA SOMA DE TODOS OS CLICKS */
+        SET clickSums = (SELECT SUM(click) FROM view_analise_marketing_clicks);
+        
+        /* DEFINE A QUANTIA DA MEDIA DE CLICKS  */
+        SET mediaClicks = (clickSums / (SELECT COUNT(idProduto) FROM view_analise_marketing_clicks));
+        
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
 -- Final view structure for view `view_analise_marketing_clicks`
 --
 
@@ -800,4 +891,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-05 21:12:28
+-- Dump completed on 2017-12-06  7:12:31
