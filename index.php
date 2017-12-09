@@ -138,14 +138,14 @@
           <!-- ****************************** -->
 
           <!-- FOR DESKTOP -->
-          <div class="logo" id="logo">
+          <div id="logo">
             <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
           </div>
 
           <!-- FOR MOBILE -->
-          <!-- <div id="logoMOBILE">
+          <div class="logo" id="logoMOBILE">
             <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
-          </div> -->
+          </div>
 
           <div class="menuItems">
             <a href="aboutDecade.php">

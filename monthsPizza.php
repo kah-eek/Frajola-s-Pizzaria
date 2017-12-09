@@ -4,41 +4,41 @@
     require_once("./modulo/monthsPizzaDAO.php");
     require_once("./modulo/functions.php");
     /* ****************** */
-    
+
     //CONNECT TO DB
     connectToDB();
 
     //CHECK IF btnLogin EXISTS
     if(isset($_POST["btnLogin"])){
-        
+
         //GETTING FIELD DATA
         $username = $_POST["txtUsername"];
         $password = $_POST["txtPassword"];
-        
+
         if(login($username,$password)){
 
-            
+
             //STARTING SESSION VARIABLES
             session_start();
-            
+
             //GETTING EMPLOYEE'S ID
             $employee = getEmployeeIdByLogin($username,$password);
-            
+
             //SETTING INTO SESSION VARIABLE
             $_SESSION["employeesId"] = $employee["idFuncionario"];
-            
+
             //MOVING TO CMS PAGE
             header("location:./cms/cmsHome.php");
         }else{
         ?>
-            <script type="text/javascript"> 
+            <script type="text/javascript">
                 alert("Usuário ou senha incorreto!");
             </script>
         <?php
         }
     }
 
-    
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -47,7 +47,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/monthsPizzaStyle.css">
     <link rel="shortcut icon" type="image/x-icon" href="pictures/logo/logo.png">
-            
+
   </head>
   <body>
     <form name="monthsPizzaForm" method="post" action="monthsPizza.php">
@@ -56,7 +56,7 @@
         <nav>
           <div id="logo">
             <a href="index.php">
-                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >               
+                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
             </a>
           </div>
 
@@ -116,15 +116,15 @@
       <!-- ********* -->
 
       <!-- ******************************************************************** -->
-      
+
       <!-- ************************** MAIN CONTENT **************************** -->
-      <main>
+      <div id="main">
           <section>
-              
+
               <!-- MAIN TITLE -->
               <div id="mainTitleBox">
                 <div id="mainTitle">
-                    <h1>A PIZZA DO MÊS</h1>                    
+                    <h1>A PIZZA DO MÊS</h1>
                 </div>
               </div>
               <!-- ************** -->
@@ -143,25 +143,25 @@
                     <div class="promotionalStripBox">
                         <div class="promotionalStripBox_NO_SHADOW">
                           <div class="promotionalStrip">
-                              
+
                               <!-- PROMOTIONAL PICTURE -->
                               <div class="promotionalPicture">
                                   <img class="promoImg" src="<?php echo(cutPathNoEnd($item["imagem"], 4)); ?>" title="A Priemira é da Casa :)" alt="A Priemira é da Casa!!!">
                               </div>
                               <!-- ******************* -->
-                              
+
                               <!-- NAME / DESCRIPTION -->
                               <div class="promotionsNameAndDescrptn">
                                   <div class="promotionsName">
                                       NOME: <?php echo($item["titulo"]); ?>
                                   </div>
-                                  
+
                                   <div class="promotionsDescription">
                                       DESCRIÇÃO: <?php echo($item["descricao"]); ?>
                                   </div>
                               </div>
                               <!-- ****************** -->
-                              
+
                               <!-- PRICE -->
                               <div class="price">
                                   <div class="priceLabel">
@@ -174,25 +174,25 @@
                               <!-- ****************** -->
                           </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- ***************************************************************************** -->
 
                 <?php
                 }
 
 
-              ?>              
-               
+              ?>
+
           </section>
-      </main>
-        
+      </div>
+
       <div id="blankSpace">
         <!-- JUST ONE BLANK SPACE-->
         <div id="moonMan">
             <img id="moonManResize" src="./pictures/background/transparentMoon.png" title="Let's Keep Listening" alt="ícone de um astronauta ouvindo música. Let's Keep Listening">
         </div>
-      </div>  
-      
+      </div>
+
       <!-- FOOTER -->
       <footer>
         <div id="footerBox">
@@ -234,4 +234,3 @@
     </form>
   </body>
 </html>
-

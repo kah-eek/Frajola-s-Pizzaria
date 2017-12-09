@@ -10,28 +10,28 @@
 
     //CHECK IF btnLogin EXISTS
     if(isset($_POST["btnLogin"])){
-        
+
         //GETTING FIELD DATA
         $username = $_POST["txtUsername"];
         $password = $_POST["txtPassword"];
-        
+
         if(login($username,$password)){
 
-            
+
             //STARTING SESSION VARIABLES
             session_start();
-            
+
             //GETTING EMPLOYEE'S ID
             $employee = getEmployeeIdByLogin($username,$password);
-            
+
             //SETTING INTO SESSION VARIABLE
             $_SESSION["employeesId"] = $employee["idFuncionario"];
-            
+
             //MOVING TO CMS PAGE
             header("location:./cms/cmsHome.php");
         }else{
         ?>
-            <script type="text/javascript"> 
+            <script type="text/javascript">
                 alert("Usuário ou senha incorreto!");
             </script>
         <?php
@@ -46,16 +46,25 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/aboutUsStyle.css">
     <link rel="shortcut icon" type="image/x-icon" href="pictures/logo/logo.png">
-      
+
   </head>
   <body>
     <form name="aboutUsForm" method="post" action="aboutUs.php">
       <!-- ******************* MENU ITEMS ********************************** -->
       <header>
         <nav>
+
+          <!-- FOR DESKTOP -->
           <div id="logo">
             <a href="index.php">
-                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+              <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+            </a>
+          </div>
+
+          <!-- FOR MOBILE -->
+          <div class="logo" id="logoMOBILE">
+            <a href="index.php">
+              <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
             </a>
           </div>
 
@@ -115,18 +124,18 @@
       <!-- ********* -->
 
       <!-- ******************************************************************** -->
-      
+
       <!-- ************************** MAIN CONTENT **************************** -->
-      <main>
+      <div id="main">
           <section>
-              
+
               <!-- MAIN TITLE -->
               <div id="mainTitleBox">
                 <div id="mainTitle">
                     <h1>FRAJOLA'S PIZZARIA</h1>
                 </div>
               </div>
-              
+
               <div id="scdnTitleBox">
                 <div id="scdnTitle">
                     <h6>DESDE 1957</h6>
@@ -135,7 +144,7 @@
               <!-- ************** -->
 
               <?php
-                
+
                 // GETTING ITEMS FROM DB
                 $items = getActiveItems();
 
@@ -148,22 +157,22 @@
                   <div class="StripBox">
                       <div class="StripBox_NO_SHADOW">
                         <div class="strip">
-                            
+
                             <!-- LABEL AND PICTURE 1 -->
                             <div class="labelAndPicture">
-                                
+
                                 <!-- LABEL ABOUT FRAJOLA'S PIZZARIA -->
                                 <div class="label">
                                     <?php echo($item["titulo"]); ?>
                                 </div>
-                            
+
                                 <!-- PICTURE ABOUT FRAJOLA'S PIZZARIA -->
                                 <div class="picture">
                                     <img class="img" src="<?php echo(cutPathNoEnd($item["imagem"],4)); ?>" title="<?php echo($item["titulo"]); ?>" alt="<?php echo($item["titulo"]); ?>">
                                 </div>
-                                
+
                             </div>
-                            
+
                             <!-- DESCRIPTION 1 -->
                             <div class="description">
                                 <?php echo($item["descricao"]); ?>
@@ -171,20 +180,20 @@
                             <!-- ****************** -->
                         </div>
                       </div>
-                  </div> 
+                  </div>
                   <!-- ***************************************************************************** -->
 
-                <?php               
-                }      
-              ?>  
-              
+                <?php
+                }
+              ?>
+
           </section>
-      </main>
-        
+      </div>
+
       <div id="blankSpace">
-        <!-- JUST ONE BLANK SPACE-->  
-      </div>  
-      
+        <!-- JUST ONE BLANK SPACE-->
+      </div>
+
       <!-- FOOTER -->
       <footer>
         <div id="footerBox">
@@ -226,4 +235,3 @@
     </form>
   </body>
 </html>
-

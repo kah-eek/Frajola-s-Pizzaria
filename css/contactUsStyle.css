@@ -9,380 +9,773 @@
     src: url("../fonts/carved-rock/CarvedRock.ttf");
 }
 /* ********************************************* */
-body{
-  margin: 0px;
-  padding: 0px;
-}
-header{
-  width: 100%;
-  height: 80px;
-  background-color: #000000;
-  position: fixed;
-}
-#fillBlank{
-  width: 100%;
-  height: 80px;
-}
-/*---------------- MENU -----------------*/
-nav{
-  width: 1200px;
-  height: 80px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*-- MENU ITEMS --*/
-#logo{
-  width: 100px;
-  height: 80px;
 
-/*  background-color: gray;*/
+/*MOBILE*/
+@media screen and (max-device-width: 480px){
 
-  float: left;
-}
-#logoImg{
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+  header{
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    position: fixed;
+  }
+  #fillBlank{
+    width: 100%;
+    height: 80px;
+  }
+  /*---------------- MENU -----------------*/
+  nav{
+    width: 1200px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-- MENU ITEMS --*/
+  #logo{
     width: 100px;
     height: 80px;
-}
-.menuItems{
-  width: 150px;
-  height: 50px;
-  padding-top: 30px;
-  text-align: center;
-  float: left;
 
-  /*TEXT*/
-  font-family: verdana, "Chaparral Pro";
-  font-size: 14px;
-  color: #d84315;
-  font-weight:bold;
-}
-#loginArea{
-  width: 200px;
-  height: 80px;
-  float: left;
-}
-.inputArea_LOGIN{
-  width: 90px;
-  height: 65px;
-  padding-top: 15px;
-  text-align: left;
-  float: left;
+  /*  background-color: gray;*/
 
-  /*TEXT*/
-  font-family: verdana, "Chaparral Pro";
-  font-size: 14px;
-  color: #d9d9d9;
-}
-.inputText_LOGIN{
-  width: 85px;
-  float: left;
-}
-#buttonArea_LOGIN{
-  width: 20px;
-  height: 48px;
-  padding-top: 32px;
-  float: left;
-}
-#btnOk_LOGIN{
-  width: 20px;
-  height: 20px;
-  padding: 0px;
-  font-size: 10px;
-  float: left;
-}
-/*------------------ MAIN/SECTION --------------*/
-main{
-    width: 100%;
-    min-height: 1000px;
-    max-height: auto;
-}
-section{
-    width: 100%;
-    min-height: 875px;
-    max-height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*---------------- MAIN TITLE -----------------*/
-#aboutPageBg{
-    width: 100%;
-    height: 400px;
-    background-image: url(../pictures/background/talkbg.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-#mainTitleBox{
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 110px;
-    padding-top: 10px;
-/*    background-color: aqua;*/
-}
-#frstTitle{
-    width: 750px;
-    height: 75px;
-    padding-left: 50px;
-/*    background-color: green;*/
-}
-h1{
-    text-align: center;
-    font-size: 49px;
-    font-family: hemiheadbdi, "Bernard MT Condensed";
-    color: #d84315;
-}
-#scdnTitleBox{
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
-    height: 230px;
-    padding-top: 10px;
-/*    background-color: green;*/
-}
-#scdnTitle{
-    width: 975px;
-    height: 100px;
-    padding-left: 25px;
-/*    background-color: white;*/
-}
-h3{
-    text-align: center;
-    font-size: 25px;
-    font-family: hemiheadbdi, "Bernard MT Condensed";
-    color: #d84315;
-    text-shadow: 2px 2px 1px #000000;
-}
-/*---------------- SECTION TITLE ----------------*/
-#sectionTitleBox{
-    width: 100%;
-    height: 80px;
-    background-color: #212121;
-    border-bottom: solid 1px #d84315;
-}
-#sectionTitle{
-    margin-left: auto;
-    margin-right: auto;
-    width: 520px;
-    height: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-/*    background-color: aqua;*/
-    /* TEXT */
-    font-size: 33px;
-    font-family: CarvedRock, "Chaparral Pro";
-    color: #d84315;
-    font-weight: bold;
-}
-/*---------------- FORMS'S DATA ----------------*/
-#formsDataBox{
-    width: 100%;
-    height: 365px;
-    background-color: #212121;
-    padding-top: 30px;
-    
-}
-#formsDataCenterBox{
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-    height: 365px;
-    border-right: solid 1px #d84315;
-/*    background-color: aqua;*/
-}
-.inputSpaces{
-    width: 400px;
-    height: 365px;
-/*    background-color: green;*/
-    border: #ffffff;
     float: left;
-}
-.fieldToFillBox{
-    width: 400px;
-    height: 80px;
-/*    background-color: beige;*/
-}
-#fieldToFillBox{
-    width: 400px;
-    height: 130px;
-    padding-bottom: 30px;
-/*    background-color: beige;*/
-}
-.fieldsLabel{
-    width: 400px;
-    height: 35px;
-/*    background-color: black;*/
-    
-    /* TEXT */
-    font-size: 24px;
-    font-family: CarvedRock, "Chaparral Pro";
-    color: #d84315;
-    font-weight: bold;
-}
-.italic{
-    font-style: italic;
-}
-.inputField{
-    width: 400px;
-    height: 45px;
-/*    background-color: blueviolet;*/
-}
-#inputField{
-    width: 400px;
-    height: 95px;
-/*    background-color: blueviolet;*/
-}
-.defaultFont{
-    font-size: 18px;
-    font-family: CarvedRock, "Chaparral Pro";
-    color: #d84315;
-    font-weight: bold;
-    
-    margin-right: 45px;
-}
-.clientsData{
-    width: 345px;
-}
-textarea{
-    resize: none;
-}
-.marginRight{
-    margin-right: 10px;
-}
-/****************** OUTSIDE BUTTON ******************/
-#outsideButton{
-/*    width: 55px;*/
-    width: 28px;
-    height: 25px;
-    background-color: #d84315;
-    margin-left: 1200px;
-    border-radius: 5px 0px 0px 5px;
-    position: fixed;
-    transition: 2s;
-}
-#outsideButton:hover{
-    transition: 2s;
-    height: 85px;
-    padding-right: 10px;
-}
-#outsideButton:hover>#sendButtonImg{
-    transition: 2s;
-    opacity: 0;
-}
-#outsideButton:hover>#submitButton{
-    transition: 5s;
-    height: 25px;
-    display: block;
-/*    background-color: aqua;*/
-}
-#sendButtonImg{
-    width: 25px;
-    height: 25px;
-    transition: 2s;
-/*    float: left;*/
-/*    background-color: aqua;*/
-}
-#submitButton{
-/*    float: left;*/
-    background: transparent;
-    border: none;
+  }
+  #logoImg{
+      width: 100px;
+      height: 80px;
+  }
+  .menuItems{
     display: none;
+    width: 150px;
+    height: 50px;
+    padding-top: 30px;
+    text-align: center;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  #loginArea{
+    display: none;
+    width: 200px;
+    height: 80px;
+    float: left;
+  }
+  .inputArea_LOGIN{
+    width: 90px;
+    height: 65px;
+    padding-top: 15px;
+    text-align: left;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d9d9d9;
+  }
+  .inputText_LOGIN{
+    width: 85px;
+    float: left;
+  }
+  #buttonArea_LOGIN{
+    width: 20px;
+    height: 48px;
+    padding-top: 32px;
+    float: left;
+  }
+  #btnOk_LOGIN{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 10px;
+    float: left;
+  }
+  /*------------------ MAIN/SECTION --------------*/
+  #main{
+      width: 100%;
+      min-height: 1000px;
+      height: auto;
+  }
+  section{
+      width: 100%;
+      min-height: 875px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  /*---------------- MAIN TITLE -----------------*/
+  #aboutPageBg{
+      width: 100%;
+      height: 400px;
+      background-image: url(../pictures/background/talkbg.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+  }
+  #mainTitleBox{
+    width: 100%; /*800px*/
+    height: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    background-color: aqua;
+  }
+  #frstTitle{
+      width: 100%; /*750px*/
+      height: 75px;
+      /*padding-left: 50px;*/
+  /*    background-color: green;*/
+  }
+  h1{
+      text-align: center;
+      font-size: 49px;
+      font-family: hemiheadbdi, "Bernard MT Condensed";
+      color: #d84315;
+  }
+  #scdnTitleBox{
+    width: 100%; /*1000px*/
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    background-color: green;
+  }
+  #scdnTitle{
+      width: 100%; /*975px*/
+      height: 100px;
+      padding-left: 25px;
+      background-color: white;
+  }
+  h3{
+      text-align: center;
+      font-size: 25px;
+      font-family: hemiheadbdi, "Bernard MT Condensed";
+      color: #d84315;
+      text-shadow: 2px 2px 1px #000000;
+  }
+  /*---------------- SECTION TITLE ----------------*/
+  #sectionTitleBox{
+      width: 100%;
+      height: 80px;
+      background-color: #212121;
+      border-bottom: solid 1px #d84315;
+  }
+  #sectionTitle{
+    width: 100%; /*520px*/
+    height: 60px;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    padding-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: aqua;
+      /* TEXT */
+      font-size: 33px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+  }
+  /*---------------- FORMS'S DATA ----------------*/
+  #formsDataBox{
+      width: 100%;
+      height: 100%; /*365px*/
+      background-color: #212121;
+      padding-top: 30px;
+
+  }
+  #formsDataCenterBox{
+    width: 100%; /*1200px*/
+    height: 100%; /*365px*/
+    margin-left: auto;
+    margin-right: auto;
+    border-right: solid 1px #d84315;
+    background-color: yellow;
+  }
+  .inputSpaces{
+      width: 100%; /*400px*/
+      height: 10%; /*365px*/
+      background-color: green;
+      border: #ffffff;
+      /*float: left;*/
+  }
+  .fieldToFillBox{
+      width: 400px;
+      height: 80px;
+  /*    background-color: beige;*/
+  }
+  #fieldToFillBox{
+      width: 400px;
+      height: 130px;
+      padding-bottom: 30px;
+  /*    background-color: beige;*/
+  }
+  .fieldsLabel{
+      width: 400px;
+      height: 35px;
+  /*    background-color: black;*/
+
+      /* TEXT */
+      font-size: 24px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+  }
+  .italic{
+      font-style: italic;
+  }
+  .inputField{
+      width: 400px;
+      height: 45px;
+      background-color: blueviolet;
+  }
+  #inputField{
+      width: 400px;
+      height: 95px;
+  /*    background-color: blueviolet;*/
+  }
+  .defaultFont{
+      font-size: 18px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+
+      margin-right: 45px;
+  }
+  .clientsData{
+      width: 345px;
+  }
+  textarea{
+      resize: none;
+  }
+  .marginRight{
+      margin-right: 10px;
+  }
+  /****************** OUTSIDE BUTTON ******************/
+  #outsideButton{
+    display: none;
+  /*    width: 55px;*/
+      width: 28px;
+      height: 25px;
+      background-color: #d84315;
+      margin-left: 1200px;
+      border-radius: 5px 0px 0px 5px;
+      position: fixed;
+      transition: 2s;
+  }
+  #outsideButton:hover{
+      transition: 2s;
+      height: 85px;
+      padding-right: 10px;
+  }
+  #outsideButton:hover>#sendButtonImg{
+      transition: 2s;
+      opacity: 0;
+  }
+  #outsideButton:hover>#submitButton{
+      transition: 5s;
+      height: 25px;
+      display: block;
+  /*    background-color: aqua;*/
+  }
+  #sendButtonImg{
+      width: 25px;
+      height: 25px;
+      transition: 2s;
+  /*    float: left;*/
+  /*    background-color: aqua;*/
+  }
+  #submitButton{
+  /*    float: left;*/
+      background: transparent;
+      border: none;
+      display: none;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 14px;
+      font-weight: bold;
+  /*    vertical-align: top;*/
+  /*    transform:rotate(7deg);*/
+      -ms-transform:rotate(90deg); /* IE 9 */
+      -moz-transform:rotate(90deg); /* Firefox */
+      -webkit-transform:rotate(90deg); /* Safari and Chrome */
+      -o-transform:rotate(90deg); /* Opera */
+  }
+  /****************** FOOTER ******************/
+  footer{
+    display: none;
+    width: 100%;
+    height: 150px;
+    float: left;
+    background-color: #263238;
+  }
+  #footerBox{
+    width: 1200px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #263238;
+  }
+  #leftSideFooter{
+    width: 200px;
+    height: 100px;
+    float: left;
+    padding-top: 50px;
+  /*  background-color: aqua; */
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 10px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  .icon{
+      width: 55px;
+      height: 55px;
+      margin-left: 8px;
+  }
+  #rightSideFooter{
+    width: 300px;
+    height: 50px;
+    float: left;
+    padding-top: 100px;
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #rightSideFooter a{
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: CarvedRock, "Chaparral Pro";
+  }
+
+  #centerSpaceFooter{
+    width: 700px;
+    height: 150px;
+    float: left;
+  }
+  #frsText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #scdnText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  /*******************************************/
+
+  /**************** GENERAL tags *************/
+  a{
+    text-decoration: none;
+    color: #d84315;
     font-family: CarvedRock, "Chaparral Pro";
     font-size: 14px;
+  }
+  /*******************************************/
+
+}
+
+/*DESKTOP*/
+@media screen and (min-width:1024px){
+
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+  header{
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    position: fixed;
+  }
+  #fillBlank{
+    width: 100%;
+    height: 80px;
+  }
+  /*---------------- MENU -----------------*/
+  nav{
+    width: 1200px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-- MENU ITEMS --*/
+  #logo{
+    width: 100px;
+    height: 80px;
+
+  /*  background-color: gray;*/
+
+    float: left;
+  }
+  #logoImg{
+      width: 100px;
+      height: 80px;
+  }
+  .menuItems{
+    width: 150px;
+    height: 50px;
+    padding-top: 30px;
+    text-align: center;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  #loginArea{
+    width: 200px;
+    height: 80px;
+    float: left;
+  }
+  .inputArea_LOGIN{
+    width: 90px;
+    height: 65px;
+    padding-top: 15px;
+    text-align: left;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d9d9d9;
+  }
+  .inputText_LOGIN{
+    width: 85px;
+    float: left;
+  }
+  #buttonArea_LOGIN{
+    width: 20px;
+    height: 48px;
+    padding-top: 32px;
+    float: left;
+  }
+  #btnOk_LOGIN{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 10px;
+    float: left;
+  }
+  /*------------------ MAIN/SECTION --------------*/
+  #main{
+      width: 100%;
+      min-height: 1000px;
+      height: auto;
+  }
+  section{
+      width: 100%;
+      min-height: 875px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  /*---------------- MAIN TITLE -----------------*/
+  #aboutPageBg{
+      width: 100%;
+      height: 400px;
+      background-image: url(../pictures/background/talkbg.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+  }
+  #mainTitleBox{
+      margin-left: auto;
+      margin-right: auto;
+      width: 800px;
+      height: 110px;
+      padding-top: 10px;
+  /*    background-color: aqua;*/
+  }
+  #frstTitle{
+      width: 750px;
+      height: 75px;
+      padding-left: 50px;
+  /*    background-color: green;*/
+  }
+  h1{
+      text-align: center;
+      font-size: 49px;
+      font-family: hemiheadbdi, "Bernard MT Condensed";
+      color: #d84315;
+  }
+  #scdnTitleBox{
+      margin-left: auto;
+      margin-right: auto;
+      width: 1000px;
+      height: 230px;
+      padding-top: 10px;
+  /*    background-color: green;*/
+  }
+  #scdnTitle{
+      width: 975px;
+      height: 100px;
+      padding-left: 25px;
+  /*    background-color: white;*/
+  }
+  h3{
+      text-align: center;
+      font-size: 25px;
+      font-family: hemiheadbdi, "Bernard MT Condensed";
+      color: #d84315;
+      text-shadow: 2px 2px 1px #000000;
+  }
+  /*---------------- SECTION TITLE ----------------*/
+  #sectionTitleBox{
+      width: 100%;
+      height: 80px;
+      background-color: #212121;
+      border-bottom: solid 1px #d84315;
+  }
+  #sectionTitle{
+      margin-left: auto;
+      margin-right: auto;
+      width: 520px;
+      height: 60px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+  /*    background-color: aqua;*/
+      /* TEXT */
+      font-size: 33px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+  }
+  /*---------------- FORMS'S DATA ----------------*/
+  #formsDataBox{
+      width: 100%;
+      height: 365px;
+      background-color: #212121;
+      padding-top: 30px;
+
+  }
+  #formsDataCenterBox{
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
+      height: 365px;
+      border-right: solid 1px #d84315;
+  /*    background-color: aqua;*/
+  }
+  .inputSpaces{
+      width: 400px;
+      height: 365px;
+  /*    background-color: green;*/
+      border: #ffffff;
+      float: left;
+  }
+  .fieldToFillBox{
+      width: 400px;
+      height: 80px;
+  /*    background-color: beige;*/
+  }
+  #fieldToFillBox{
+      width: 400px;
+      height: 130px;
+      padding-bottom: 30px;
+  /*    background-color: beige;*/
+  }
+  .fieldsLabel{
+      width: 400px;
+      height: 35px;
+  /*    background-color: black;*/
+
+      /* TEXT */
+      font-size: 24px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+  }
+  .italic{
+      font-style: italic;
+  }
+  .inputField{
+      width: 400px;
+      height: 45px;
+  /*    background-color: blueviolet;*/
+  }
+  #inputField{
+      width: 400px;
+      height: 95px;
+  /*    background-color: blueviolet;*/
+  }
+  .defaultFont{
+      font-size: 18px;
+      font-family: CarvedRock, "Chaparral Pro";
+      color: #d84315;
+      font-weight: bold;
+
+      margin-right: 45px;
+  }
+  .clientsData{
+      width: 345px;
+  }
+  textarea{
+      resize: none;
+  }
+  .marginRight{
+      margin-right: 10px;
+  }
+  /****************** OUTSIDE BUTTON ******************/
+  #outsideButton{
+  /*    width: 55px;*/
+      width: 28px;
+      height: 25px;
+      background-color: #d84315;
+      margin-left: 1200px;
+      border-radius: 5px 0px 0px 5px;
+      position: fixed;
+      transition: 2s;
+  }
+  #outsideButton:hover{
+      transition: 2s;
+      height: 85px;
+      padding-right: 10px;
+  }
+  #outsideButton:hover>#sendButtonImg{
+      transition: 2s;
+      opacity: 0;
+  }
+  #outsideButton:hover>#submitButton{
+      transition: 5s;
+      height: 25px;
+      display: block;
+  /*    background-color: aqua;*/
+  }
+  #sendButtonImg{
+      width: 25px;
+      height: 25px;
+      transition: 2s;
+  /*    float: left;*/
+  /*    background-color: aqua;*/
+  }
+  #submitButton{
+  /*    float: left;*/
+      background: transparent;
+      border: none;
+      display: none;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 14px;
+      font-weight: bold;
+  /*    vertical-align: top;*/
+  /*    transform:rotate(7deg);*/
+      -ms-transform:rotate(90deg); /* IE 9 */
+      -moz-transform:rotate(90deg); /* Firefox */
+      -webkit-transform:rotate(90deg); /* Safari and Chrome */
+      -o-transform:rotate(90deg); /* Opera */
+  }
+  /****************** FOOTER ******************/
+  footer{
+    width: 100%;
+    height: 150px;
+    float: left;
+    background-color: #263238;
+  }
+  #footerBox{
+    width: 1200px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #263238;
+  }
+  #leftSideFooter{
+    width: 200px;
+    height: 100px;
+    float: left;
+    padding-top: 50px;
+  /*  background-color: aqua; */
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 10px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  .icon{
+      width: 55px;
+      height: 55px;
+      margin-left: 8px;
+  }
+  #rightSideFooter{
+    width: 300px;
+    height: 50px;
+    float: left;
+    padding-top: 100px;
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #rightSideFooter a{
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
     font-weight: bold;
-/*    vertical-align: top;*/
-/*    transform:rotate(7deg);*/
-    -ms-transform:rotate(90deg); /* IE 9 */
-    -moz-transform:rotate(90deg); /* Firefox */
-    -webkit-transform:rotate(90deg); /* Safari and Chrome */
-    -o-transform:rotate(90deg); /* Opera */
-}
-/****************** FOOTER ******************/
-footer{
-  width: 100%;
-  height: 150px;
-  float: left;
-  background-color: #263238;
-}
-#footerBox{
-  width: 1200px;
-  height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #263238;
-}
-#leftSideFooter{
-  width: 200px;
-  height: 100px;
-  float: left;
-  padding-top: 50px;
-/*  background-color: aqua; */
+    font-family: CarvedRock, "Chaparral Pro";
+  }
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 10px;
-  font-family: verdana, "Chaparral Pro";
-}
-.icon{
-    width: 55px;
-    height: 55px;
-    margin-left: 8px;
-}
-#rightSideFooter{
-  width: 300px;
-  height: 50px;
-  float: left;
-  padding-top: 100px;
+  #centerSpaceFooter{
+    width: 700px;
+    height: 150px;
+    float: left;
+  }
+  #frsText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 16px;
-  font-family: verdana, "Chaparral Pro";
-}
-#rightSideFooter a{
-  text-align: center;
-  color: #d84315;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: CarvedRock, "Chaparral Pro";
-}
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #scdnText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
 
-#centerSpaceFooter{
-  width: 700px;
-  height: 150px;
-  float: left;
-}
-#frsText{
-  width: 720px;
-  height: 50px;
-  padding-top: 25px;
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  /*******************************************/
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 18px;
-  font-family: verdana, "Chaparral Pro";
-}
-#scdnText{
-  width: 720px;
-  height: 50px;
-  padding-top: 25px;
+  /**************** GENERAL tags *************/
+  a{
+    text-decoration: none;
+    color: #d84315;
+    font-family: CarvedRock, "Chaparral Pro";
+    font-size: 14px;
+  }
+  /*******************************************/
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 18px;
-  font-family: verdana, "Chaparral Pro";
 }
-/*******************************************/
-
-/**************** GENERAL tags *************/
-a{
-  text-decoration: none;
-  color: #d84315;
-  font-family: CarvedRock, "Chaparral Pro";
-  font-size: 14px;
-}
-/*******************************************/

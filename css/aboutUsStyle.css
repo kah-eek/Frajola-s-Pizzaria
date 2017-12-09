@@ -17,7 +17,13 @@
 /* ********************************************* */
 
 /*MOBILE*/
-@media screen and (max-width: 480px){
+@media screen and (max-device-width:480px){
+
+  *{
+    padding: 0px;
+    margin: 0px;
+  }
+
   body{
     margin: 0px;
     padding: 0px;
@@ -57,14 +63,27 @@
   }
   /*-- MENU ITEMS --*/
   #logo{
+    display: none;
     width: 100px;
     height: 80px;
-
-  /*  background-color: gray;*/
-
     float: left;
+    /*  background-color: gray;*/
   }
   #logoImg{
+    display: none;
+    width: 100px;
+    height: 80px;
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: block;
       width: 100px;
       height: 80px;
   }
@@ -116,7 +135,7 @@
     float: left;
   }
   /*------------ MAIN CONTENT -----------------*/
-  main{
+  #main{
       width: 100%;
       height: 100%;
   /*    background-color: aqua; */
@@ -350,7 +369,7 @@
 }
 
 /*DESKTOP*/
-@media screen and (min-width: 1024px){
+@media screen and (min-width:1024px){
 
   body{
     margin: 0px;
@@ -402,6 +421,13 @@
       width: 100px;
       height: 80px;
   }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: none;
+  }
+  #logoImgMOBILE{
+      display: none;
+  }
   .menuItems{
     width: 150px;
     height: 50px;
@@ -450,7 +476,7 @@
     float: left;
   }
   /*------------ MAIN CONTENT -----------------*/
-  main{
+  #main{
       width: 100%;
       height: 100%;
   /*    background-color: aqua; */
@@ -680,5 +706,6 @@
     font-size: 14px;
   }
   /*******************************************/
+
 
 }
