@@ -1,7 +1,7 @@
 <?php
-	
+
 	function getActiveItems(){
-		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt 
+		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt
 				INNER JOIN tbl_subcategoria AS sbc ON sbc.idSubcategoria = prt.idSubcategoria
 				INNER JOIN tbl_categoria AS ctg ON sbc.idCategoria = ctg.idCategoria
 				WHERE prt.ativo = 1 ORDER BY rand();";
@@ -10,9 +10,9 @@
 	}
 
 	function getSearch($text){
-		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt 
+		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt
 				INNER JOIN tbl_subcategoria AS sbc ON sbc.idSubcategoria = prt.idSubcategoria
-				INNER JOIN tbl_categoria AS ctg ON sbc.idCategoria = ctg.idCategoria 
+				INNER JOIN tbl_categoria AS ctg ON sbc.idCategoria = ctg.idCategoria
 				WHERE titulo LIKE '%".$text."%' OR categoria LIKE '%".$text."%' OR subcategoria LIKE '%".$text."%';";
 
 		return mysql_query($sql);
@@ -30,6 +30,12 @@
 		return mysql_query($sql);
 	}
 
+	function getSubcategoryInfoById($categoryId){
+		$sql = "SELECT * FROM tbl_subcategoria WHERE idSubcategoria = $categoryId;";
+
+		return mysql_query($sql);
+	}
+
 	function getSubcategories(){
 		$sql = "SELECT * FROM tbl_subcategoria;";
 
@@ -37,7 +43,7 @@
 	}
 
 	function getItem($itemId){
-		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt 
+		$sql = "SELECT prt.idProduto, prt.titulo, prt.preco, prt.descricao, prt.detalhes, prt.imagemProduto, prt.idSubcategoria, subcategoria, sbc.idCategoria, categoria FROM tbl_produto AS prt
 				INNER JOIN tbl_subcategoria AS sbc ON sbc.idSubcategoria = prt.idSubcategoria
 				INNER JOIN tbl_categoria AS ctg ON sbc.idCategoria = ctg.idCategoria
 				WHERE prt.idProduto = ".$itemId.";";

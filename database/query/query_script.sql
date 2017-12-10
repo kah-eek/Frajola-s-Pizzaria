@@ -54,4 +54,4 @@ DESC tbl_item_pizza_mes;
 
 DESCRIBE tbl_subcategoria;
 
-SELECT * FROM tbl_avaliacao;
+SELECT * FROM tbl_produto;

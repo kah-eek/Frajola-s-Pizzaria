@@ -30,7 +30,7 @@
             header("location:./cms/cmsHome.php");
         }else{
         ?>
-            <script type="text/javascript">
+            <script>
                 alert("Usuário ou senha incorreto!");
             </script>
         <?php
@@ -90,7 +90,7 @@
     <div id="controller">
     </div>
 
-    <script type="text/javascript">
+    <script>
       $(document).ready(function(){
 
         // ABOUT PRODUCT - MODAL
@@ -109,6 +109,19 @@
           $(".menuItems").toggle("slow");
         });
 
+        // GET ITEMS BY THAT SUBCATEGORY CLICKED
+        $(".subcategory_listItem_LEFT_MENU").click(function(){
+
+          $.ajax({
+            type:"POST",
+            url:"index.php",
+            data:{subcategoryId:$(this).data("id")},
+            success: function(dados){
+              $("body").html(dados);
+            }
+          });
+
+        });
 
       });
     </script>
@@ -264,9 +277,9 @@
 
                           $subcategory = mysql_fetch_array($subcategorySize);
                         ?>
-
-                          <li class="subcategory_listItem_LEFT_MENU"><?php echo($subcategory["subcategoria"]); ?></li>
-
+                          <a href="#">
+                            <li data-id="<?php echo($subcategory["idSubcategoria"]); ?>" class="subcategory_listItem_LEFT_MENU"><?php echo($subcategory["subcategoria"]); ?></li>
+                          </a>
                         <?php
                         }
 
@@ -321,11 +334,28 @@
             <!-- ITEMS -->
 
             <?php
-            // TEST************** - SERACH BAR
-            if (isset($_POST["btnSearch"])) {
+            // SEARCH BAR
+            if (isset($_POST["btnSearch"]) || isset($_POST["subcategoryId"])) {
+
+              // CHECK WHICH KEY WORD IS TO SEARCH
+              if (isset($_POST["btnSearch"])) { // SEARCH FIELD
+
+                $keyWord = $_POST["txtSearch"];
+
+              }else{ // SUBACTEGORY CLICKED
+
+                // GET SUBCATEGORY (mysql_query)
+                $subcategory = getSubcategoryInfoById($_POST["subcategoryId"]);
+
+                // GET SUBCATEGORY OBJECT
+                $rs = mysql_fetch_array($subcategory);
+
+                // SET KEY WORD TO SEARCH LIKE SOMETHING SUBCATEGORY
+                $keyWord = $rs["subcategoria"];
+              }
 
               // GETTING REQUIRED SEARCH
-              $size = getSearch($_POST["txtSearch"]);
+              $size = getSearch($keyWord);
 
               for($i = 0; $i < mysql_num_rows($size); $i++){
 
@@ -348,19 +378,6 @@
                     </div>
 
                     <div class="descLabel_ITEMS_BOX">
-                      <!--
-                      <details>
-                        <summary>Descrição</summary>
-                          Molho,
-                          mussarela,
-                          presunto,
-                          ovos,
-                          palmito,
-                          rodelas de tomate,
-                          cebola,
-                          azeitonas e orégano.
-                      </details>
-                      -->
                       Descrição: <?php echo($rs["descricao"]); ?>
                     </div>
 
@@ -369,7 +386,7 @@
                     </div>
 
                     <div class="detailsDescLabel_ITEMS_BOX">
-                      <a class="show" href="#" onclick="modal(<?php echo($rs["idProduto"]); ?>); setClick(<?php echo($rs["idProduto"]); ?>, 'tbl_produto"')">
+                      <a class="show" href="#" onclick="modal(<?php echo($rs["idProduto"]); ?>); setClick(<?php echo($rs["idProduto"]); ?>, 'tbl_produto')">
                         Detalhes
                       </a>
                     </div>
@@ -379,7 +396,7 @@
 
               <?php
               }
-            }else{
+            }else{ // ACTIVE ITEMS
 
                 $size = getActiveItems();
                 for($i = 0; $i < mysql_num_rows($size); $i++){
@@ -401,19 +418,6 @@
                       </div>
 
                       <div class="descLabel_ITEMS_BOX">
-                        <!--
-                        <details>
-                          <summary>Descrição</summary>
-                            Molho,
-                            mussarela,
-                            presunto,
-                            ovos,
-                            palmito,
-                            rodelas de tomate,
-                            cebola,
-                            azeitonas e orégano.
-                        </details>
-                        -->
                         Descrição: <?php echo($rs["descricao"]); ?>
                       </div>
 
