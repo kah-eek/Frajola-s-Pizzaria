@@ -478,7 +478,7 @@ nav{
       // CHART HEIGHT
       $height = getColumnChart($items["click"]);
 
-      // CHECK IF $height IS SMALLER THAN 1 TO MULTIPLY IT FOR 10
+      // CHECK IF $height IS SMALLER THAN 1 TO MULTIPLY IT FOR 100
       if ($height < 1) {
         $height = $height*100;
       }

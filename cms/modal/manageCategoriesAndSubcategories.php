@@ -19,20 +19,22 @@
 	</head>
 	<body>
 
-			<script type="text/javascript">
+			<script>
 				$(document).ready(function(){
 
-					var itemId = $(".deleteItem").val();
 
 					// CHECK IF CLICK WAS OVER DELETE BUTTON
 					$(".deleteItem").click(function(){
+
+              var itemId = $(this).data("id");
+
 							$.ajax({
 								type:"POST",
-								url:"../controller/cmsAddProductItemController.php?mode=deleteCategory",
+								url:"./controller/cmsAddProductItemController.php?mode=deleteCategory",
 								data:{id:itemId},
 								async:true,
 								success:function(dados){
-									alert(dados);
+									$(".modal").html(dados);
 								}
 							});
 					});
@@ -62,10 +64,10 @@
 
 							<div class="categoryAndSubcategoryActions">
 								<a href="#">
-									<img src="../pictures/icons/edit-validated-icon256.png" title="Deletar" alt="Deletar este item">
+									<img src="../pictures/icons/edit-validated-icon256.png" title="Editar" alt="Editar este item">
 								</a>
 
-								<a class="deleteItem" href="#id=<?php echo($item['idCategoria']);?>" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
+								<a data-id="<?php echo($item['idCategoria']);?>" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
 									<img src="../pictures/icons/delete-icon512.png" title="Deletar" alt="Deletar este item">
 								</a>
 							</div>
@@ -83,6 +85,31 @@
 					Subcategorias
 				</div>
 
+
+        <?php
+
+					$size = getAllSubcategories();
+
+					while($item = mysql_fetch_array($size)){
+					?>
+						<div class="categoryAndSubcategoryData">
+							<div class="categoryTitle">
+								<?php echo($item["categoria"]."  -->  ".$item["subcategoria"]);?>
+							</div>
+
+							<div class="categoryAndSubcategoryActions">
+								<a href="#">
+									<img src="../pictures/icons/edit-validated-icon256.png" title="Editar" alt="Editar este item">
+								</a>
+
+								<a data-id="<?php echo($item['idSubategoria']);?>" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
+									<img src="../pictures/icons/delete-icon512.png" title="Deletar" alt="Deletar este item">
+								</a>
+							</div>
+						</div>
+					<?php
+					}
+				?>
 
 			</div>
 	</body>

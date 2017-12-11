@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `tbl_avaliacao`;
 CREATE TABLE `tbl_avaliacao` (
   `idAvaliacao` int(11) NOT NULL AUTO_INCREMENT,
   `idProduto` int(11) NOT NULL,
-  `avaliacao` int(11) NOT NULL DEFAULT '0',
+  `avaliacao` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`idAvaliacao`),
   KEY `idProduto` (`idProduto`),
   CONSTRAINT `tbl_avaliacao_ibfk_1` FOREIGN KEY (`idProduto`) REFERENCES `tbl_produto` (`idProduto`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_avaliacao` (
 
 LOCK TABLES `tbl_avaliacao` WRITE;
 /*!40000 ALTER TABLE `tbl_avaliacao` DISABLE KEYS */;
-INSERT INTO `tbl_avaliacao` VALUES (2,9,0),(3,10,0),(4,11,0);
+INSERT INTO `tbl_avaliacao` VALUES (2,9,1.5),(3,10,1),(4,11,0),(5,9,1.5),(6,9,3),(7,9,5),(8,9,1),(9,9,2),(10,9,3),(11,9,0),(12,9,5),(13,9,5),(14,9,5),(15,9,5),(16,9,5),(17,9,5),(18,9,5),(19,9,3.5),(20,9,3.5),(21,9,4.5),(22,9,5),(23,9,5),(24,11,5),(25,11,4),(26,11,0),(27,11,3),(28,10,4);
 /*!40000 ALTER TABLE `tbl_avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +53,7 @@ CREATE TABLE `tbl_categoria` (
   `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(180) NOT NULL,
   PRIMARY KEY (`idCategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `tbl_categoria` (
 
 LOCK TABLES `tbl_categoria` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria` DISABLE KEYS */;
-INSERT INTO `tbl_categoria` VALUES (1,'Pizzas Salgadas'),(2,'Pizzas Doces'),(3,'Pizzas Grandes'),(4,'Pizzas Pequenas'),(5,'teste'),(6,'Teste do Caique');
+INSERT INTO `tbl_categoria` VALUES (1,'Pizzas Salgadas'),(2,'Pizzas Doces'),(3,'Pizzas Grandes'),(4,'Pizzas Pequenas');
 /*!40000 ALTER TABLE `tbl_categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,6 +157,8 @@ CREATE TABLE `tbl_endereco` (
   `logradouro` varchar(250) NOT NULL,
   `numero` varchar(6) NOT NULL,
   `bairro` varchar(200) NOT NULL,
+  `latitude` double NOT NULL DEFAULT '0',
+  `longitude` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`idEndereco`),
   KEY `fk_idCidade_tbl_endereco` (`idCidade`),
   CONSTRAINT `fk_idCidade_tbl_endereco` FOREIGN KEY (`idCidade`) REFERENCES `tbl_cidade` (`idCidade`) ON DELETE CASCADE
@@ -169,7 +171,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (3,69,'15615615','Looney Tunes','666','QUINTO DOS INFERNOS'),(4,14,'84648864','Marechal Hastinphilo Moura','73','MORUMBI'),(5,22,'15615615','Pamplona','1873','Jardins');
+INSERT INTO `tbl_endereco` VALUES (3,69,'15615615','Looney Tunes','666','QUINTO DOS INFERNOS',36.114647,-115.172813),(4,14,'84648864','Marechal Hastinphilo Moura','73','MORUMBI',40.73061,-73.935242),(5,22,'15615615','Pamplona','1873','Jardins',43.623409,-79.368683);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -599,7 +601,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (9,'BLACK SABBATH',32.00,'dasdsa','dasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsadds','../../pictures/pizzas/products/dfbb0126ab80de58d999173ebe199c71.jpg',2,1,6),(10,'Teste2',66.00,'aaaaa','testetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetst','../../pictures/pizzas/products/c84e432feabfc64ee41ef9709b031d03.jpg',2,1,2),(11,'Teste03',23.00,'wwwww','xfcdftestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetsteteteteteste','../../pictures/pizzas/products/11ef6448ed11f7832c90d5aebbc77f21.jpg',3,1,0);
+INSERT INTO `tbl_produto` VALUES (9,'BLACK SABBATH',32.00,'dasdsa','dasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsaddsaddasdsadds','../../pictures/pizzas/products/dfbb0126ab80de58d999173ebe199c71.jpg',2,1,140),(10,'Teste2',66.00,'aaaaa','testetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetst','../../pictures/pizzas/products/c84e432feabfc64ee41ef9709b031d03.jpg',2,1,12),(11,'Teste03',23.00,'wwwww','xfcdftestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetstetetetetestetetsteteteteteste','../../pictures/pizzas/products/11ef6448ed11f7832c90d5aebbc77f21.jpg',3,1,52);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -669,7 +671,7 @@ CREATE TABLE `tbl_subcategoria` (
   `subcategoria` varchar(80) NOT NULL,
   PRIMARY KEY (`idSubcategoria`),
   KEY `idCategoria` (`idCategoria`),
-  CONSTRAINT `tbl_subcategoria_ibfk_1` FOREIGN KEY (`idCategoria`) REFERENCES `tbl_categoria` (`idCategoria`)
+  CONSTRAINT `fk_tbl_subcategoria_idCategoria` FOREIGN KEY (`idCategoria`) REFERENCES `tbl_categoria` (`idCategoria`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -679,7 +681,7 @@ CREATE TABLE `tbl_subcategoria` (
 
 LOCK TABLES `tbl_subcategoria` WRITE;
 /*!40000 ALTER TABLE `tbl_subcategoria` DISABLE KEYS */;
-INSERT INTO `tbl_subcategoria` VALUES (1,1,'Sabores Vegetarianas'),(2,1,'Sabores Tradicionais'),(3,1,'Sabores Peixe'),(4,1,'Sabores a Moda'),(5,1,'Sabores Carne'),(6,2,'Teste da doce'),(7,6,'aaaaaaa');
+INSERT INTO `tbl_subcategoria` VALUES (1,1,'Sabores Vegetarianas'),(2,1,'Sabores Tradicionais'),(3,1,'Sabores Peixe'),(4,1,'Sabores a Moda'),(5,1,'Sabores Carne'),(6,2,'Teste da doce');
 /*!40000 ALTER TABLE `tbl_subcategoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -756,6 +758,21 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary table structure for view `view_mostrar_subcategorias_e_categorias`
+--
+
+DROP TABLE IF EXISTS `view_mostrar_subcategorias_e_categorias`;
+/*!50001 DROP VIEW IF EXISTS `view_mostrar_subcategorias_e_categorias`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `view_mostrar_subcategorias_e_categorias` AS SELECT 
+ 1 AS `idSubcategoria`,
+ 1 AS `idCategoria`,
+ 1 AS `subcategoria`,
+ 1 AS `categoria`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Dumping routines for database 'pizzaria'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `sp_obter_id_produto_do_ranking` */;
@@ -812,6 +829,48 @@ BEGIN
         
         SET parcent = TRUNCATE(((maxClick*maxClicksNumber)/100), 2);
         
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_obter_media_avaliacao_do_produto` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obter_media_avaliacao_do_produto`(IN _idProduto INT, OUT mediaProduto FLOAT)
+BEGIN
+        
+        SET mediaProduto = (SELECT AVG(avaliacao) FROM tbl_avaliacao WHERE idProduto = _idProduto);
+        
+        END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_obter_media_avaliacao_produtos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_obter_media_avaliacao_produtos`(OUT mediaAvaliacao FLOAT)
+BEGIN
+    
+		SET mediaAvaliacao = (SELECT AVG(avaliacao) FROM tbl_avaliacao);
+    
     END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -877,7 +936,25 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_mostrar_produtos` AS select `prd`.`idProduto` AS `idProduto`,`prd`.`titulo` AS `titulo`,`prd`.`preco` AS `preco`,`prd`.`descricao` AS `descricao`,`prd`.`detalhes` AS `detalhes`,`prd`.`imagemProduto` AS `imagemProduto`,`prd`.`idSubcategoria` AS `idSubcategoria`,`prd`.`ativo` AS `ativo`,`sbc`.`subcategoria` AS `subcategoria`,`ctg`.`idCategoria` AS `idCategoria`,`ctg`.`categoria` AS `categoria`,`avl`.`avaliacao` AS `avaliacao`,`avl`.`idAvaliacao` AS `idAvaliacao` from (((`tbl_produto` `prd` join `tbl_avaliacao` `avl` on((`avl`.`idProduto` = `prd`.`idProduto`))) join `tbl_subcategoria` `sbc` on((`sbc`.`idSubcategoria` = `prd`.`idSubcategoria`))) join `tbl_categoria` `ctg` on((`ctg`.`idCategoria` = `sbc`.`idCategoria`))) */;
+/*!50001 VIEW `view_mostrar_produtos` AS select `prd`.`idProduto` AS `idProduto`,`prd`.`titulo` AS `titulo`,`prd`.`preco` AS `preco`,`prd`.`descricao` AS `descricao`,`prd`.`detalhes` AS `detalhes`,`prd`.`imagemProduto` AS `imagemProduto`,`prd`.`idSubcategoria` AS `idSubcategoria`,`prd`.`ativo` AS `ativo`,`sbc`.`subcategoria` AS `subcategoria`,`ctg`.`idCategoria` AS `idCategoria`,`ctg`.`categoria` AS `categoria`,avg(`avl`.`avaliacao`) AS `avaliacao`,`avl`.`idAvaliacao` AS `idAvaliacao` from (((`tbl_produto` `prd` join `tbl_avaliacao` `avl` on((`avl`.`idProduto` = `prd`.`idProduto`))) join `tbl_subcategoria` `sbc` on((`sbc`.`idSubcategoria` = `prd`.`idSubcategoria`))) join `tbl_categoria` `ctg` on((`ctg`.`idCategoria` = `sbc`.`idCategoria`))) group by `prd`.`idProduto` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_mostrar_subcategorias_e_categorias`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_mostrar_subcategorias_e_categorias`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_mostrar_subcategorias_e_categorias` AS select `sbc`.`idSubcategoria` AS `idSubcategoria`,`sbc`.`idCategoria` AS `idCategoria`,`sbc`.`subcategoria` AS `subcategoria`,`ctg`.`categoria` AS `categoria` from (`tbl_subcategoria` `sbc` join `tbl_categoria` `ctg` on((`sbc`.`idCategoria` = `ctg`.`idCategoria`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -891,4 +968,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-06  7:12:31
+-- Dump completed on 2017-12-10 22:34:43

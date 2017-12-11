@@ -11,7 +11,7 @@
 /* ********************************************* */
 
 /*MOBILE*/
-@media screen and (max-device-width: 480px){
+@media screen and (max-width: 480px){
 
   body{
     margin: 0px;
@@ -29,24 +29,40 @@
   }
   /*---------------- MENU -----------------*/
   nav{
-    width: 1200px;
+    width: 100%;
     height: 80px;
     margin-left: auto;
     margin-right: auto;
   }
   /*-- MENU ITEMS --*/
   #logo{
-    width: 100px;
+    display: none;
+    /*width: 100px;
     height: 80px;
-
-  /*  background-color: gray;*/
-
-    float: left;
+    margin-left: auto;
+    margin-right: auto;*/
+    /*background-color: gray;*/
+    /*float: left;*/
   }
   #logoImg{
+      display: none;
+      /*width: 100px;
+      height: 80px;*/
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: block;
       width: 100px;
       height: 80px;
   }
+  /* ************** */
   .menuItems{
     display: none;
     width: 150px;
@@ -118,18 +134,20 @@
       background-attachment: fixed;
   }
   #mainTitleBox{
-    width: 100%; /*800px*/
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    background-color: aqua;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      height: 160px;
+      padding-top: 10px;
+      /*background-color: aqua;*/
   }
   #frstTitle{
-      width: 100%; /*750px*/
-      height: 75px;
+      width: 100%;
+      height: 120px;
+      margin-left: auto;
+      margin-right: auto;
       /*padding-left: 50px;*/
-  /*    background-color: green;*/
+      /*background-color: green;*/
   }
   h1{
       text-align: center;
@@ -138,18 +156,20 @@
       color: #d84315;
   }
   #scdnTitleBox{
-    width: 100%; /*1000px*/
+    width: 100%;
     height: 230px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
-    background-color: green;
+    /*background-color: purple;*/
   }
   #scdnTitle{
-      width: 100%; /*975px*/
+      width: 100%;
       height: 100px;
-      padding-left: 25px;
-      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+      /*padding-left: 25px;*/
+  /*    background-color: white;*/
   }
   h3{
       text-align: center;
@@ -166,47 +186,50 @@
       border-bottom: solid 1px #d84315;
   }
   #sectionTitle{
-    width: 100%; /*520px*/
+    width: 100%;
     height: 60px;
+    margin-left: auto;
+    margin-right: auto;
     /*padding-left: 20px;*/
     /*padding-right: 20px;*/
     padding-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: aqua;
-      /* TEXT */
-      font-size: 33px;
-      font-family: CarvedRock, "Chaparral Pro";
-      color: #d84315;
-      font-weight: bold;
+    /*    background-color: aqua;*/
+    /* TEXT */
+    text-align: center;
+    font-size: 33px;
+    font-family: CarvedRock, "Chaparral Pro";
+    color: #d84315;
+    font-weight: bold;
   }
   /*---------------- FORMS'S DATA ----------------*/
   #formsDataBox{
       width: 100%;
-      height: 100%; /*365px*/
+      min-height: 365px;
+      height: auto;
+      overflow: auto;
       background-color: #212121;
       padding-top: 30px;
 
   }
   #formsDataCenterBox{
-    width: 100%; /*1200px*/
-    height: 100%; /*365px*/
+    width: 100%;
+    height: 365px;
     margin-left: auto;
     margin-right: auto;
     border-right: solid 1px #d84315;
-    background-color: yellow;
+    /*background-color: aqua;*/
   }
   .inputSpaces{
-      width: 100%; /*400px*/
-      height: 10%; /*365px*/
-      background-color: green;
+      width: 400px;
+      height: 365px;
+  /*    background-color: green;*/
       border: #ffffff;
-      /*float: left;*/
+      float: left;
   }
   .fieldToFillBox{
       width: 400px;
       height: 80px;
-  /*    background-color: beige;*/
+      background-color: beige;
   }
   #fieldToFillBox{
       width: 400px;
@@ -231,7 +254,7 @@
   .inputField{
       width: 400px;
       height: 45px;
-      background-color: blueviolet;
+  /*    background-color: blueviolet;*/
   }
   #inputField{
       width: 400px;
@@ -306,20 +329,20 @@
   }
   /****************** FOOTER ******************/
   footer{
-    display: none;
     width: 100%;
     height: 150px;
     float: left;
     background-color: #263238;
   }
   #footerBox{
-    width: 1200px;
+    width: 100%;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
     background-color: #263238;
   }
   #leftSideFooter{
+    display: none;
     width: 200px;
     height: 100px;
     float: left;
@@ -338,10 +361,11 @@
       margin-left: 8px;
   }
   #rightSideFooter{
-    width: 300px;
-    height: 50px;
+    width: 100%;
+    height: 20%;
     float: left;
-    padding-top: 100px;
+    padding-top: 10%;
+    /*background-color: yellow;*/
 
     /*TEXT*/
     text-align: center;
@@ -358,11 +382,12 @@
   }
 
   #centerSpaceFooter{
-    width: 700px;
-    height: 150px;
+    width: 100%;
+    height: 50%;
     float: left;
   }
   #frsText{
+    display: none;
     width: 720px;
     height: 50px;
     padding-top: 25px;
@@ -374,9 +399,10 @@
     font-family: verdana, "Chaparral Pro";
   }
   #scdnText{
-    width: 720px;
-    height: 50px;
-    padding-top: 25px;
+    width: 100%;
+    height: 40%;
+    /*background-color: aqua;*/
+    padding-top: 10%;
 
     /*TEXT*/
     text-align: center;
@@ -394,6 +420,7 @@
     font-size: 14px;
   }
   /*******************************************/
+
 
 }
 
@@ -434,6 +461,20 @@
       width: 100px;
       height: 80px;
   }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: none;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: none;
+      width: 100px;
+      height: 80px;
+  }
+  /* ************** */
   .menuItems{
     width: 150px;
     height: 50px;

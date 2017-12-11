@@ -96,7 +96,7 @@
     <body>
 
         <!-- SHOWS MODAL -->
-        <script type="text/javascript">
+        <script>
           $(document).ready(function(){
 
             $(".show").click(function(){

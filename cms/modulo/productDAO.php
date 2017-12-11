@@ -44,7 +44,7 @@
 			$sqlStoredProcedure = "CALL sp_obter_media_click_produtos(@clicksAverage);";
 			mysql_query($sqlStoredProcedure);
 
-			$sqlResultSP = "SELECT @clicksAverage AS media_clicks;";
+			$sqlResultSP = "SELECT TRUNCATE(@clicksAverage,2) AS media_clicks;";
 
 			$result = mysql_query($sqlResultSP);
 
@@ -79,6 +79,12 @@
 
 		function getCategories(){
 			$sql = "SELECT * FROM tbl_categoria;";
+
+			return mysql_query($sql);
+		}
+
+		function getAllSubcategories(){
+			$sql = "SELECT * FROM view_mostrar_subcategorias_e_categorias;";
 
 			return mysql_query($sql);
 		}

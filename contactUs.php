@@ -80,10 +80,15 @@
           <!-- ******************* MENU ITEMS ********************************** -->
           <header>
             <nav>
+
+              <!-- FOR DESKTOP -->
               <div id="logo">
-                <a href="index.php">
-                    <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria">
-                </a>
+                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+              </div>
+
+              <!-- FOR MOBILE -->
+              <div class="logo" id="logoMOBILE">
+                <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
               </div>
 
               <div class="menuItems">

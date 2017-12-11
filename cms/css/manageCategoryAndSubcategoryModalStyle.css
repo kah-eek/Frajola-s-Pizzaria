@@ -6,7 +6,8 @@
 /*CATEGORY AND SUBCATEGORY AREA*/
 .categoryAndSubcategoryArea{
 	width: 800px;
-	height: 300px;
+	min-height: 100px;
+	height: auto;
 	/*background-color: aqua;*/
 }
 

@@ -8,12 +8,6 @@
     connectToDB();
 
 
-    // DEFAULT VARIABLES
-    $ERROR_MESSAGE = "ERROR: ";
-    $success = false;
-
-
-
     // FUNCTIONS
 
     // GET ONLY ACTIVE PRODUCTS
@@ -35,25 +29,31 @@
             return json_encode($products);
         }
 
+        // CASE SOMETHING WRONG HAPPEN
         echo($ERROR_MESSAGE);
     }
     // ******************************************
 
     // SET EVALUATION TO PRODUCT
-    function setEvaluate($itemId, $valuation){
-        $sql = "UPDATE tbl_avaliacao SET avaliacao = $evaluation WHERE idProduto = $ietmId;";
+    function setEvaluate($itemId, $evaluation){
+        $sql = "INSERT INTO tbl_avaliacao(idProduto, avaliacao) VALUES($itemId, $evaluation);";
 
         // CHECK IF UPDATE WAS OK
         if (mysql_query($sql)) {
-
+          return "SUCCESS";
         }
+
+        // CASE SOMETHING WRONG HAPPEN
+        echo("ERROR: EVALUATION NOT SETTED");
+
     }
     // ******************************************
 
 
     // CHECK IF METHOD IS GET FOR ALLOW USES THAT FUNCTONS
     /*
-        SELECT.
+        SELECT;
+        INSERT.
     */
     if($_SERVER["REQUEST_METHOD"] == "GET"){
 
@@ -70,24 +70,32 @@
                 // PRINT ONE JSON WITH ACTIVE PRODUCTS
                 echo(getActiveProducts());
 
+            }else if($action == "evaluate"){
+
+              // CHECK IF EXISTS PRODUCT ID AT URL
+              if (isset($_GET["id"]) && $_GET["id"] > 0) {
+
+                // CHECK IF EXISTS PRODUCT EVALUTION VALUE AT URL
+                if (isset($_GET["evaluation"]) && $_GET["evaluation"] >= 0 && $_GET["evaluation"] <= 5) {
+
+                  // PRINT STATUS MESSAGE - SET EVALUATION ON PRODUCT
+                  echo(setEvaluate($_GET["id"], $_GET["evaluation"]));
+
+                }else {
+                  echo("ERROR: EVALUATION VALUE NOT FOUND!".$_GET["evaluation"]);
+                }
+
+
+              }else {
+                echo("ERROR: ID NOT FOUND!");
+              }
+
+            }else{
+                echo("ERROR: ACTION NOT DEFINED");
             }
 
-            // DELETE A PRODUCT ACCORDING ID REPORTED
-            // else if($action == "delete"){
-            //
-            //     // CHECK IF EXISTS id AT URL
-            //     if(isset($_GET["id"])){
-            //         echo($_GET["id"]);
-            //     }else{
-            //         echo($ERROR_MESSAGE."DOESN'T EXISTS ID AT URL");
-            //     }
-            // }
-
-
-
-
-
-
+        }else{
+          echo("ERROR: NOT FOUND ACTION AT URL");
         }
 
     }
