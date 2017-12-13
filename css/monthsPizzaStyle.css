@@ -22,13 +22,13 @@
   body{
     margin: 0px;
     padding: 0px;
-    /*background-image: url("../pictures/background/pizzarockPackage192x1080.jpg");
+    background-image: url("../pictures/background/pizzarockPackage192x1080.jpg");
     background-size: cover;
-    background-attachment: fixed;*/
+    background-attachment: fixed;
   }
   header{
     width: 100%;
-    height: 5%;
+    height: 80px;
     background-color: #000000;
     position: fixed;
     z-index: 999;
@@ -38,7 +38,6 @@
     height: 80px;
   }
   #backgroundVideo{
-    display: none;
     position: fixed;
     right: 0px;
     bottom: 0px;
@@ -53,34 +52,68 @@
   /*---------------- MENU -----------------*/
   nav{
     width: 100%;
-    height: 100%;
+    height: 80px;
     margin-left: auto;
     margin-right: auto;
   }
   /*-- MENU ITEMS --*/
   #logo{
-    width: 100px;
+    display: none;
+    /*width: 100px;
     height: 80px;
-
-  /*  background-color: gray;*/
-
-    float: left;
+    margin-left: auto;
+    margin-right: auto;*/
+    /*background-color: gray;*/
+    /*float: left;*/
   }
   #logoImg{
+      display: none;
+      /*width: 100px;
+      height: 80px;*/
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: block;
       width: 100px;
       height: 80px;
   }
-  .menuItems{
+  /* ************** */
+
+  /*LINK TO HOME*/
+  #menuItems{
     display: none;
-    width: 150px;
-    height: 50px;
-    padding-top: 30px;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
     text-align: center;
-    float: left;
+    /*float: left;*/
+    background-color: #212121;
 
     /*TEXT*/
     font-family: verdana, "Chaparral Pro";
-    font-size: 14px;
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  .menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
     color: #d84315;
     font-weight:bold;
   }
@@ -134,15 +167,15 @@
   /*-- MAIN TITLE --*/
   #mainTitleBox{
       width: 100%;
-      height: 100%;
+      height: 100px;
       background: rgb(204, 204, 204);
       background: rgba(204, 204, 204, 0.4);
-      /*background-color: green;*/
+  /*    background-color: green;*/
   }
   #mainTitle{
       width: 100%;
-      height: 100%;
-      background-color: aqua;
+      height: 100px;
+  /*    background-color: aqua;*/
       margin-left: auto;
       margin-right: auto;
       padding-top: 30px;
@@ -159,87 +192,100 @@
 
   /*-- PROMOTIONAL STRIP --*/
   .promotionalStripBox{
-    width: 100%;
-    height: 100%;
-    background-color: green; /*263238*/
-    background: rgb(38,50,56);
-    background: rgba(38,50,56, 0.5);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 5px 5px 5px #212121;
+      width: 100%;
+      min-height: 380px;
+      height: auto;
+      overflow: hidden;
+      background-color: #263238;
+      background: rgb(38,50,56);
+      background: rgba(38,50,56, 0.5);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 5px 5px 5px #212121;
   }
   .promotionalStripBox_NO_SHADOW{
       width: 100%;
-      height: 380px;
+      min-height: 380px;
+      height: auto;
+      overflow: hidden;
       background-color: #263238;
   }
   .promotionalStrip{
     width: 100%;
-    height: 100%;
+    min-height: 380px;
+    height: auto;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    background-color: red; /* #263238 */
+    background-color: #263238; /* #263238 */
   }
   .promotionalPicture{
-    display: none;
-    width: 390px;
+    width: 90%;
     height: 370px;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     /*    background-color: yellow;*/
     float: left;
   }
   .promoImg{
       width: 380px;
       height: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
       border-radius: 10px 10px 10px 10px;
   }
   .promotionsNameAndDescrptn{
-    display: none;
-    width: 410px;
-    height: 380px;
-    /*    background-color: aqua;*/
-    float: left;
+      width: 100%;
+      min-height: 305px;
+      height: auto;
+      /*background-color: aqua;*/
+      float: left;
   }
   .promotionsName{
-      width: 390px;
+      width: 100%;
       height: 50px;
       padding-top: 40px;
   /*    background-color: bisque;*/
-      padding-left: 20px;
+      /*padding-left: 20px;*/
 
       /* TEXT */
+      text-align: center;
       font-family: CarvedRock, "Chaparral Pro";
       font-size: 24px;
       font-weight: bold;
       color: #d84315;
   }
   .promotionsDescription{
-      width: 390px;
-      height: 275px;
-      padding-left: 20px;
+      width: 90%;
+      min-height: 200px;
+      height: auto;
+      padding-left: 5%;
+      padding-right: 5%;
       padding-top: 15px;
   /*    background-color: cornflowerblue;*/
 
       /* TEXT */
+      text-align: justify;
+      word-break: break-all;
       font-family: CarvedRock, "Chaparral Pro";
       font-size: 24px;
       font-weight: bold;
       color: #d84315;
   }
   .price{
-    display: none;
-      width: 390px;
-      height: 380px;
+      width: 100%;
+      height: 80px;
       float: left;
-  /*    background-color: aqua;*/
+      /*background-color: aqua;*/
   }
   .priceLabel{
-      width: 390px;
+      width: 100%;
       height: 30px;
-      padding-top: 160px;
+      /*padding-top: 10px;*/
       float: left;
-  /*    background-color: darkgreen;*/
+      /*background-color: darkgreen;*/
 
       /* TEXT */
       text-align: center;
@@ -249,10 +295,10 @@
       color: #d84315;
   }
   .onlyPrice{
-      width: 390px;
-      height: 190px;
+      width: 100%;
+      height: 40px;
       float: left;
-  /*    background-color: paleturquoise;*/
+      /*background-color: paleturquoise;*/
 
       /* TEXT */
       text-align: center;
@@ -271,20 +317,20 @@
   #blankSpace{
       width: 100%;
       height: 400px;
-      background-color: aqua;
+  /*    background-color: aqua;*/
       margin-left: auto;
       margin-right: auto;
   }
   #moonMan{
     display: none;
-      width: 500px;
+      width: 100%;
       height: 365px;
       padding-top: 35px;
       transition: 8s;
   /*    background-color: green; */
   }
   #moonMan:hover{
-      padding-left: 700px;
+      padding-left: 100%;
       transition: 8s;
   }
   #moonManResize{
@@ -301,7 +347,7 @@
   }
   #footerBox{
     width: 100%;
-    height: 100%;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
     background-color: #263238;
@@ -328,8 +374,7 @@
   #rightSideFooter{
     width: 100%;
     height: 50%;
-    /*background-color: aqua;*/
-    /*float: left;*/
+    float: left;
     /*padding-top: 100px;*/
 
     /*TEXT*/
@@ -349,7 +394,7 @@
   #centerSpaceFooter{
     width: 100%;
     height: 50%;
-    /*float: left;*/
+    float: left;
   }
   #frsText{
     display: none;
@@ -365,8 +410,8 @@
   }
   #scdnText{
     width: 100%;
-    height: 50%;
-    padding-top: 25px;
+    height: 95%;
+    padding-top: 5%;
 
     /*TEXT*/
     text-align: center;
@@ -439,6 +484,30 @@
   #logoImg{
       width: 100px;
       height: 80px;
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: none;
+  }
+  #logoImgMOBILE{
+      display: none;
+  }
+  /* ************** */
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
   }
   .menuItems{
     width: 150px;

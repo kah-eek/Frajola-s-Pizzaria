@@ -73,9 +73,23 @@
         <link rel="stylesheet" type="text/css" href="css/contactUsStyle.css">
         <link rel="shortcut icon" type="image/x-icon" href="pictures/logo/logo.png">
         <script src="js/useful.js"></script>
+        <script src="js/jquery.js"></script>
 
     </head>
     <body>
+
+        <script>
+          $(document).ready(function(){
+
+            // SHOW SITE MAP FOR ANOTHER PAGES
+            $(".logo").click(function(){
+              $(".menuItems").toggle("slow");
+              $("#menuItems").toggle("slow");
+            });
+
+          });
+        </script>
+
         <form name="contactUsLoginForm" method="post" action="contactUs.php">
           <!-- ******************* MENU ITEMS ********************************** -->
           <header>
@@ -89,6 +103,12 @@
               <!-- FOR MOBILE -->
               <div class="logo" id="logoMOBILE">
                 <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+              </div>
+
+              <div id="menuItems">
+                <a href="index.php">
+                    Home
+                </a>
               </div>
 
               <div class="menuItems">

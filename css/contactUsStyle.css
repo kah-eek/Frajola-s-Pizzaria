@@ -11,7 +11,7 @@
 /* ********************************************* */
 
 /*MOBILE*/
-@media screen and (max-width: 480px){
+@media screen and (max-device-width:480px){
 
   body{
     margin: 0px;
@@ -34,6 +34,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   /*-- MENU ITEMS --*/
   #logo{
     display: none;
@@ -63,17 +64,35 @@
       height: 80px;
   }
   /* ************** */
-  .menuItems{
+
+  /*LINK TO HOME*/
+  #menuItems{
     display: none;
-    width: 150px;
-    height: 50px;
-    padding-top: 30px;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
     text-align: center;
-    float: left;
+    /*float: left;*/
+    background-color: #212121;
 
     /*TEXT*/
     font-family: verdana, "Chaparral Pro";
-    font-size: 14px;
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  .menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
     color: #d84315;
     font-weight:bold;
   }
@@ -206,43 +225,45 @@
       width: 100%;
       min-height: 365px;
       height: auto;
-      overflow: auto;
       background-color: #212121;
       padding-top: 30px;
 
   }
   #formsDataCenterBox{
     width: 100%;
-    height: 365px;
+    min-height: 365px;
+    height: auto;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    border-right: solid 1px #d84315;
+    /*border-right: solid 1px #d84315;*/
     /*background-color: aqua;*/
   }
   .inputSpaces{
-      width: 400px;
+      width: 100%;
       height: 365px;
   /*    background-color: green;*/
       border: #ffffff;
       float: left;
   }
   .fieldToFillBox{
-      width: 400px;
+      width: 100%;
       height: 80px;
-      background-color: beige;
+      /*background-color: orange;*/
   }
   #fieldToFillBox{
-      width: 400px;
+      width: 100%;
       height: 130px;
       padding-bottom: 30px;
   /*    background-color: beige;*/
   }
   .fieldsLabel{
-      width: 400px;
+      width: 100%;
       height: 35px;
   /*    background-color: black;*/
 
       /* TEXT */
+      text-align: center;
       font-size: 24px;
       font-family: CarvedRock, "Chaparral Pro";
       color: #d84315;
@@ -252,13 +273,15 @@
       font-style: italic;
   }
   .inputField{
-      width: 400px;
+      width: 90%;
       height: 45px;
-  /*    background-color: blueviolet;*/
+      padding-left: 10%;
+      /*background-color: blueviolet;*/
   }
   #inputField{
-      width: 400px;
+      width: 90%;
       height: 95px;
+      padding-left: 10%;
   /*    background-color: blueviolet;*/
   }
   .defaultFont{
@@ -280,12 +303,12 @@
   }
   /****************** OUTSIDE BUTTON ******************/
   #outsideButton{
-    display: none;
+    /*display: none;*/
   /*    width: 55px;*/
       width: 28px;
       height: 25px;
       background-color: #d84315;
-      margin-left: 1200px;
+      margin-left: 94%;
       border-radius: 5px 0px 0px 5px;
       position: fixed;
       transition: 2s;
@@ -475,6 +498,23 @@
       height: 80px;
   }
   /* ************** */
+
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
   .menuItems{
     width: 150px;
     height: 50px;
