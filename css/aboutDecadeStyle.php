@@ -25,7 +25,7 @@
 /* ********************************************* */
 
 /* MOBILE */
-@media screen and (max-width: 480px){
+@media screen and (max-device-width: 480px){
 
   body{
     margin: 0px;
@@ -48,38 +48,75 @@
   }
   /*---------------- MENU -----------------*/
   nav{
-    width: 1200px;
-    height: 50px;
+    width: 100%;
+    height: 80px;
     margin-left: auto;
     margin-right: auto;
   }
+
   /*-- MENU ITEMS --*/
   #logo{
-    width: 100px;
+    display: none;
+    /*width: 100px;
     height: 80px;
-
-  /*  background-color: gray;*/
-
-    float: left;
+    margin-left: auto;
+    margin-right: auto;*/
+    /*background-color: gray;*/
+    /*float: left;*/
   }
   #logoImg{
+      display: none;
+      /*width: 100px;
+      height: 80px;*/
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: block;
       width: 100px;
       height: 80px;
   }
-  .menuItems{
-    width: 150px;
-    height: 50px;
-    padding-top: 30px;
+  /* ************** */
+
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
     text-align: center;
-    float: left;
+    /*float: left;*/
+    background-color: #212121;
 
     /*TEXT*/
     font-family: verdana, "Chaparral Pro";
-    font-size: 14px;
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  .menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
     color: #d84315;
     font-weight:bold;
   }
   #loginArea{
+    display:none;
     width: 200px;
     height: 80px;
     float: left;
@@ -114,7 +151,7 @@
     float: left;
   }
   /*------------ MAIN CONTENT -----------------*/
-  main{
+  #main{
       width: 100%;
       height: 100%;
   /*    background-color: aqua; */
@@ -128,17 +165,15 @@
   /*-- MAIN TITLE --*/
   #mainTitleBox{
       width: 100%;
-      height: 100px;
+      height: 190px;
       background: rgb(0, 0, 0);
       background: rgba(0, 0, 0, 0.4);
-      padding-bottom: 35px;
-  /*    background-color: green;*/
+      /*background-color: green;*/
   }
   #mainTitle{
-      width: 1200px;
-      height: 80px;
-      padding-top: 20px;
-  /*    background-color: paleturquoise;*/
+      width: 100%;
+      height: 100%;
+      /*background-color: paleturquoise;*/
       margin-left: auto;
       margin-right: auto;
   }
@@ -155,7 +190,9 @@
   /*-- LOCAL STRIP --*/
   .StripBox{
       width: 100%;
-      height: 415px;
+      min-height: 415px;
+      height: auto;
+      overflow: hidden;
       background-color: #263238;
       background: rgb(38,50,56);
       background: rgba(38,50,56, 0.5);
@@ -186,7 +223,9 @@
 
       #<?php echo("item_".$item["idItemPagina"]); ?>{
       width: 100%;
-      height: 380px;
+      min-height: 380px;
+      height:auto;
+      overflow:hidden;
       background-color: #263238;
       background-image: url("<?php echo(cutPathNoEnd($item['imagemFundo'], 1)); ?>");
       background-attachment: fixed;
@@ -202,20 +241,20 @@
 
   ?>
   .strip{
-      margin-left: auto;
-      margin-right: auto;
-      width: 1200px;
-      height: 380px;
-  /*    background-color: #263238; */
+    width: 100%;
+    height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    /*    background-color: #263238; */
   }
   .labelAndPicture{
-      width: 390px;
+      width: 100%;
       height: 380px;
-  /*    background-color: darkorange;*/
+      /*background-color: darkorange;*/
       float: left;
   }
   .label{
-      width: 390px;
+      width: 100%;
       height: 40px;
       padding-top: 10px;
   /*    background-color: aqua;*/
@@ -229,10 +268,9 @@
       color: #d84315;
   }
   .picture{
-      width: 380px;
+      width: 100%;
       height: 320px;
       padding-top: 10px;
-      padding-left: 10px;
   /*    background-color: yellow;*/
   }
   .img{
@@ -241,10 +279,12 @@
       border-radius: 10px 10px 10px 10px;
   }
   .description{
-      width: 770px;
+      width: 90%;
       height: 335px;
       padding-right: 40px;
       padding-top: 45px;
+      padding-left: 5%;
+      padding-right: 5%;
   /*    background-color: darkseagreen;*/
       float: left;
 
@@ -259,7 +299,7 @@
   }
   /****************** BLANK SPACE ******************/
   #blankSpace{
-      width: 1200px;
+      width: 100%;
       height: 400px;
   /*    background-color: aqua;*/
       margin-left: auto;
@@ -274,13 +314,14 @@
     background-color: #263238;
   }
   #footerBox{
-    width: 1200px;
+    width: 100%;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
     background-color: #263238;
   }
   #leftSideFooter{
+    display:none;
     width: 200px;
     height: 100px;
     float: left;
@@ -299,10 +340,9 @@
       margin-left: 8px;
   }
   #rightSideFooter{
-    width: 300px;
-    height: 50px;
+    width: 100%;
+    height: 50%;
     float: left;
-    padding-top: 100px;
 
     /*TEXT*/
     text-align: center;
@@ -319,11 +359,13 @@
   }
 
   #centerSpaceFooter{
-    width: 700px;
-    height: 150px;
+    width: 100%;
+    height: 50%;
     float: left;
+    /*background-color:purple;*/
   }
   #frsText{
+    display:none;
     width: 720px;
     height: 50px;
     padding-top: 25px;
@@ -335,9 +377,9 @@
     font-family: verdana, "Chaparral Pro";
   }
   #scdnText{
-    width: 720px;
-    height: 50px;
-    padding-top: 25px;
+    width: 100%;
+    height: 70%;
+    padding-top: 5%;
 
     /*TEXT*/
     text-align: center;
@@ -398,6 +440,31 @@
       width: 100px;
       height: 80px;
   }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: none;
+  }
+  #logoImgMOBILE{
+      display: none;
+  }
+  /* ************** */
+
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
   .menuItems{
     width: 150px;
     height: 50px;
@@ -446,7 +513,7 @@
     float: left;
   }
   /*------------ MAIN CONTENT -----------------*/
-  main{
+  #main{
       width: 100%;
       height: 100%;
   /*    background-color: aqua; */

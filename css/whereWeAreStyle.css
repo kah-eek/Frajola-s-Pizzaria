@@ -16,356 +16,805 @@
 }
 /* ********************************************* */
 
-body{
-  margin: 0px;
-  padding: 0px;
-  background-image: url("../pictures/background/guitarBodyBackgorund.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-}
-header{
-  width: 100%;
-  height: 80px;
-  background-color: #000000;
-  position: fixed;
-  z-index: 999;
-}
-#fillBlank{
-  width: 100%;
-  height: 80px;
-}
-#backgroundVideo{
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1000;
-  background: url(videos/bgVideo.mp4) repeat;
-  background-size: cover;
-}
-/*---------------- MENU -----------------*/
-nav{
-  width: 1200px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*-- MENU ITEMS --*/
-#logo{
-  width: 100px;
-  height: 80px;
+/*MOBILE*/
+@media screen and (max-device-width:480px){
 
-/*  background-color: gray;*/
-
-  float: left;
-}
-#logoImg{
-    width: 100px;
+  body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../pictures/background/guitarBodyBackgorund.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  header{
+    width: 100%;
     height: 80px;
-}
-.menuItems{
-  width: 150px;
-  height: 50px;
-  padding-top: 30px;
-  text-align: center;
-  float: left;
-
-  /*TEXT*/
-  font-family: verdana, "Chaparral Pro";
-  font-size: 14px;
-  color: #d84315;
-  font-weight:bold;
-}
-#loginArea{
-  width: 200px;
-  height: 80px;
-  float: left;
-}
-.inputArea_LOGIN{
-  width: 90px;
-  height: 65px;
-  padding-top: 15px;
-  text-align: left;
-  float: left;
-
-  /*TEXT*/
-  font-family: verdana, "Chaparral Pro";
-  font-size: 14px;
-  color: #d9d9d9;
-}
-.inputText_LOGIN{
-  width: 85px;
-  float: left;
-}
-#buttonArea_LOGIN{
-  width: 20px;
-  height: 48px;
-  padding-top: 32px;
-  float: left;
-}
-#btnOk_LOGIN{
-  width: 20px;
-  height: 20px;
-  padding: 0px;
-  font-size: 10px;
-  float: left;
-}
-/*------------ MAIN CONTENT -----------------*/
-main{
+    background-color: #000000;
+    position: fixed;
+    z-index: 999;
+  }
+  #fillBlank{
     width: 100%;
-    height: 100%;
-/*    background-color: aqua; */
-}
-section{
+    height: 80px;
+  }
+  #backgroundVideo{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background: url(videos/bgVideo.mp4) repeat;
+    background-size: cover;
+  }
+  /*---------------- MENU -----------------*/
+  nav{
     width: 100%;
-    height: 100%;
-/*    background-color: green;*/
-}
-
-/*-- MAIN TITLE --*/
-#mainTitleBox{
-    width: 100%;
-    height: 100px;
-/*
-    background: rgb(204, 204, 204);
-    background: rgba(204, 204, 204, 0.4);
-*/
-/*    background-color: gree    n;*/
-}
-#mainTitle{
-    width: 1200px;
-    height: 100px;
-/*    background-color: aqua;*/
+    height: 80px;
     margin-left: auto;
     margin-right: auto;
-}
-#title{
-    width: 375px;
+  }
+
+  /*-- MENU ITEMS --*/
+  #logo{
+    display: none;
+    /*width: 100px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;*/
+    /*background-color: gray;*/
+    /*float: left;*/
+  }
+  #logoImg{
+      display: none;
+      /*width: 100px;
+      height: 80px;*/
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #logoImgMOBILE{
+      display: block;
+      width: 100px;
+      height: 80px;
+  }
+
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  .menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  #loginArea{
+    display: none;
+    width: 200px;
     height: 80px;
     float: left;
-    padding-left: 350px;
-    padding-top: 20px;
-/*    background-color: darkgreen;*/
-}
-#titleIcon{
+  }
+  .inputArea_LOGIN{
+    width: 90px;
+    height: 65px;
+    padding-top: 15px;
+    text-align: left;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d9d9d9;
+  }
+  .inputText_LOGIN{
+    width: 85px;
+    float: left;
+  }
+  #buttonArea_LOGIN{
+    width: 20px;
+    height: 48px;
+    padding-top: 32px;
+    float: left;
+  }
+  #btnOk_LOGIN{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 10px;
+    float: left;
+  }
+  /*------------ MAIN CONTENT -----------------*/
+  main{
+      width: 100%;
+      height: 100%;
+  /*    background-color: aqua; */
+  }
+  section{
+      width: 100%;
+      height: 100%;
+  /*    background-color: green;*/
+  }
+
+  /*-- MAIN TITLE --*/
+  #mainTitleBox{
+      width: 100%;
+      height: 100px;
+  /*
+      background: rgb(204, 204, 204);
+      background: rgba(204, 204, 204, 0.4);
+  */
+  /*    background-color: gree    n;*/
+  }
+  #mainTitle{
+      width: 100%;
+      height: 100px;
+      /*background-color: aqua;*/
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #title{
+      width: 100%;
+      height: 80px;
+      float: left;
+      /*padding-left: 350px;*/
+      padding-top: 20px;
+      /*background-color: darkgreen;*/
+
+      /*TEXT*/
+      text-align: center;
+  }
+  #titleIcon{
+    display: none;
     width: 475px;
     height: 80px;
     padding-top: 10px;
     padding-bottom: 10px;
-/*    background-color: aquamarine;*/
+    background-color: aquamarine;
     float: left;
+  }
+  #titleIconResize{
+      width: 100px;
+      height: 80px;
+       -ms-transform: rotate(7deg); /* IE 9 */
+      -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+      transform: rotate(7deg);
+  }
+  h1{
+    color: #d84315;
+    font-family: hemiheadbdi, "Bernard MT Condensed";
+    font-size: 46px;
+    font-weight: bold;
+    margin: 0px;
+    text-shadow: 2px 2px 1px #000000;
+  }
+
+  /*-- LOCAL STRIP --*/
+  .localStripBox{
+      width: 100%;
+      min-height: 380px;
+      height: auto;
+      overflow: hidden;
+      background-color: #263238;
+      background: rgb(38,50,56);
+      background: rgba(38,50,56, 0.5);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 5px 5px 5px #212121;
+  }
+  .localStripBox_NO_SHADOW{
+      width: 100%;
+      min-height: 380px;
+      height: auto;
+      overflow: hidden;
+      background-color: #263238;
+  }
+  .localStrip{
+    width: 100%;
+    min-height: 380px;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #263238; /* #263238 */
+  }
+  .localPicture{
+      width: 90%;
+      height: 370px;
+      padding-top: 10px;
+      padding-left: 5%;
+      padding-right: 5%;
+  /*    background-color: yellow;*/
+      float: left;
+  }
+  .localImg{
+      width: 380px;
+      height: 360px;
+      padding-left: 15px;
+      border-radius: 10px 10px 10px 10px;
+  }
+  .placeDescrptn{
+      width: 100%;
+      min-height: 220px;
+      height: auto;
+      /*padding-left: 25px;*/
+      /*background-color: aqua;*/
+      float: left;
+  }
+  .localName{
+      width: 100%;
+      height: 50px;
+      padding-top: 40px;
+      /*background-color: bisque;*/
+      /*padding-left: 20px;*/
+
+      /* TEXT */
+      text-align: center;
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .localDescription{
+      width: 100%;
+      height: 50px;
+      /*padding-left: 20px;*/
+      padding-top: 15px;
+      /*background-color: cornflowerblue;*/
+
+      /* TEXT */
+      text-align: center;
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .localTelephone{
+      width: 100%;
+      min-height: 35px;
+      height: auto;
+      /*padding-left: 20px;*/
+      /*padding-top: 15px;*/
+      /*background-color: greenyellow;*/
+
+      /* TEXT */
+      text-align: center;
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .justAPicture{
+      width: 20%;
+      height: 105px;
+      float: left;
+      padding-top: 10px;
+      padding-left: 40%;
+      padding-right: 40%;
+      /*background-color: yellow;*/
+  }
+  .justAPictureResize{
+      width: 100px;
+      height: 100px;
+  }
+  /****************** BLANK SPACE ******************/
+  #blankSpace{
+      width: 100%;
+      height: 400px;
+  /*    background-color: aqua;*/
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  /****************** FOOTER ******************/
+  footer{
+    width: 100%;
+    height: 150px;
+    float: left;
+    background-color: #263238;
+  }
+  #footerBox{
+    width: 100%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #263238;
+  }
+  #leftSideFooter{
+    display: none;
+    width: 200px;
+    height: 100px;
+    float: left;
+    padding-top: 50px;
+  /*  background-color: aqua; */
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 10px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  .icon{
+      width: 55px;
+      height: 55px;
+      margin-left: 8px;
+  }
+  #rightSideFooter{
+    width: 100%;
+    height: 50%;
+    float: left;
+    /*background-color: green;*/
+    /*padding-top: 100px;*/
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #rightSideFooter a{
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: CarvedRock, "Chaparral Pro";
+  }
+
+  #centerSpaceFooter{
+    width: 100%;
+    height: 50%;
+    float: left;
+  }
+  #frsText{
+    display: none;
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #scdnText{
+    width: 100%;
+    height: 70%;
+    padding-top: 5%;
+    /*background-color: purple;*/
+
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  /*******************************************/
+
+  /**************** GENERAL tags *************/
+  a{
+    text-decoration: none;
+    color: #d84315;
+    font-family: CarvedRock, "Chaparral Pro";
+    font-size: 14px;
+  }
+  /*******************************************/
+
+
 }
-#titleIconResize{
+
+/*DESKTOP*/
+@media screen and (min-width:1024px){
+
+  body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../pictures/background/guitarBodyBackgorund.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  header{
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    position: fixed;
+    z-index: 999;
+  }
+  #fillBlank{
+    width: 100%;
+    height: 80px;
+  }
+  #backgroundVideo{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background: url(videos/bgVideo.mp4) repeat;
+    background-size: cover;
+  }
+  /*---------------- MENU -----------------*/
+  nav{
+    width: 1200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-- MENU ITEMS --*/
+  #logo{
     width: 100px;
     height: 80px;
-     -ms-transform: rotate(7deg); /* IE 9 */
-    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
-    transform: rotate(7deg);
-}
-h1{
-  color: #d84315;
-  font-family: hemiheadbdi, "Bernard MT Condensed";
-  font-size: 46px;
-  font-weight: bold;
-  margin: 0px;
-  text-shadow: 2px 2px 1px #000000;
-}
 
-/*-- LOCAL STRIP --*/
-.localStripBox{
+  /*  background-color: gray;*/
+
+    float: left;
+  }
+  #logoImg{
+      width: 100px;
+      height: 80px;
+  }
+  /*FOR MOBILE*/
+  #logoMOBILE{
+      display: none;
+  }
+  #logoImgMOBILE{
+      display: none;
+  }
+  /* ************** */
+
+  /*LINK TO HOME*/
+  #menuItems{
+    display: none;
+    width: 100%; /* 150px */
+    height: 100%; /* 50px */
+    padding-top: 1.5%; /* 30px */
+    text-align: center;
+    /*float: left;*/
+    background-color: #212121;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 26px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  .menuItems{
+    width: 150px;
+    height: 50px;
+    padding-top: 30px;
+    text-align: center;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d84315;
+    font-weight:bold;
+  }
+  #loginArea{
+    width: 200px;
+    height: 80px;
+    float: left;
+  }
+  .inputArea_LOGIN{
+    width: 90px;
+    height: 65px;
+    padding-top: 15px;
+    text-align: left;
+    float: left;
+
+    /*TEXT*/
+    font-family: verdana, "Chaparral Pro";
+    font-size: 14px;
+    color: #d9d9d9;
+  }
+  .inputText_LOGIN{
+    width: 85px;
+    float: left;
+  }
+  #buttonArea_LOGIN{
+    width: 20px;
+    height: 48px;
+    padding-top: 32px;
+    float: left;
+  }
+  #btnOk_LOGIN{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    font-size: 10px;
+    float: left;
+  }
+  /*------------ MAIN CONTENT -----------------*/
+  main{
+      width: 100%;
+      height: 100%;
+  /*    background-color: aqua; */
+  }
+  section{
+      width: 100%;
+      height: 100%;
+  /*    background-color: green;*/
+  }
+
+  /*-- MAIN TITLE --*/
+  #mainTitleBox{
+      width: 100%;
+      height: 100px;
+  /*
+      background: rgb(204, 204, 204);
+      background: rgba(204, 204, 204, 0.4);
+  */
+  /*    background-color: gree    n;*/
+  }
+  #mainTitle{
+      width: 1200px;
+      height: 100px;
+  /*    background-color: aqua;*/
+      margin-left: auto;
+      margin-right: auto;
+  }
+  #title{
+      width: 375px;
+      height: 80px;
+      float: left;
+      padding-left: 350px;
+      padding-top: 20px;
+  /*    background-color: darkgreen;*/
+  }
+  #titleIcon{
+      width: 475px;
+      height: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  /*    background-color: aquamarine;*/
+      float: left;
+  }
+  #titleIconResize{
+      width: 100px;
+      height: 80px;
+       -ms-transform: rotate(7deg); /* IE 9 */
+      -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+      transform: rotate(7deg);
+  }
+  h1{
+    color: #d84315;
+    font-family: hemiheadbdi, "Bernard MT Condensed";
+    font-size: 46px;
+    font-weight: bold;
+    margin: 0px;
+    text-shadow: 2px 2px 1px #000000;
+  }
+
+  /*-- LOCAL STRIP --*/
+  .localStripBox{
+      width: 100%;
+      height: 380px;
+      background-color: #263238;
+      background: rgb(38,50,56);
+      background: rgba(38,50,56, 0.5);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 5px 5px 5px #212121;
+  }
+  .localStripBox_NO_SHADOW{
+      width: 100%;
+      height: 380px;
+      background-color: #263238;
+  }
+  .localStrip{
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
+      height: 380px;
+      background-color: #263238; /* #263238 */
+  }
+  .localPicture{
+      width: 390px;
+      height: 370px;
+      padding-top: 10px;
+      padding-left: 10px;
+  /*    background-color: yellow;*/
+      float: left;
+  }
+  .localImg{
+      width: 380px;
+      height: 360px;
+      border-radius: 10px 10px 10px 10px;
+  }
+  .placeDescrptn{
+      width: 385px;
+      height: 380px;
+      padding-left: 25px;
+  /*    background-color: aqua;*/
+      float: left;
+  }
+  .localName{
+      width: 365px;
+      height: 50px;
+      padding-top: 40px;
+  /*    background-color: bisque;*/
+      padding-left: 20px;
+
+      /* TEXT */
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .localDescription{
+      width: 365px;
+      height: 50px;
+      padding-left: 20px;
+      padding-top: 15px;
+  /*    background-color: cornflowerblue;*/
+
+      /* TEXT */
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .localTelephone{
+      width: 365px;
+      height: 210px;
+      padding-left: 20px;
+      padding-top: 15px;
+  /*    background-color: aqua;*/
+
+      /* TEXT */
+      word-wrap: break-word;
+      font-family: CarvedRock, "Chaparral Pro";
+      font-size: 24px;
+      font-weight: bold;
+      color: #d84315;
+  }
+  .justAPicture{
+      width: 110px;
+      height: 105px;
+      float: left;
+      padding-top: 275px;
+      padding-left: 280px;
+  /*    background-color: aqua;*/
+  }
+  .justAPictureResize{
+      width: 100px;
+      height: 100px;
+  }
+  /****************** BLANK SPACE ******************/
+  #blankSpace{
+      width: 1200px;
+      height: 400px;
+  /*    background-color: aqua;*/
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  /****************** FOOTER ******************/
+  footer{
     width: 100%;
-    height: 380px;
+    height: 150px;
+    float: left;
     background-color: #263238;
-    background: rgb(38,50,56);
-    background: rgba(38,50,56, 0.5);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 5px 5px 5px #212121;
-}
-.localStripBox_NO_SHADOW{
-    width: 100%;
-    height: 380px;
-    background-color: #263238;
-}
-.localStrip{
+  }
+  #footerBox{
+    width: 1200px;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
-    width: 1200px;
-    height: 380px;
-    background-color: #263238; /* #263238 */
-}
-.localPicture{
-    width: 390px;
-    height: 370px;
-    padding-top: 10px;
-    padding-left: 10px;
-/*    background-color: yellow;*/
-    float: left;
-}
-.localImg{
-    width: 380px;
-    height: 360px;
-    border-radius: 10px 10px 10px 10px;
-}
-.placeDescrptn{
-    width: 385px;
-    height: 380px;
-    padding-left: 25px;
-/*    background-color: aqua;*/
-    float: left;
-}
-.localName{
-    width: 365px;
-    height: 50px;
-    padding-top: 40px;
-/*    background-color: bisque;*/
-    padding-left: 20px;
-    
-    /* TEXT */
-    word-wrap: break-word;
-    font-family: CarvedRock, "Chaparral Pro";
-    font-size: 24px;
-    font-weight: bold;
-    color: #d84315;
-}
-.localDescription{
-    width: 365px;
-    height: 50px;
-    padding-left: 20px;
-    padding-top: 15px;
-/*    background-color: cornflowerblue;*/
-    
-    /* TEXT */
-    word-wrap: break-word;
-    font-family: CarvedRock, "Chaparral Pro";
-    font-size: 24px;
-    font-weight: bold;
-    color: #d84315;
-}
-.localTelephone{
-    width: 365px;
-    height: 210px;
-    padding-left: 20px;
-    padding-top: 15px;
-/*    background-color: aqua;*/
-    
-    /* TEXT */
-    word-wrap: break-word;
-    font-family: CarvedRock, "Chaparral Pro";
-    font-size: 24px;
-    font-weight: bold;
-    color: #d84315;
-}
-.justAPicture{
-    width: 110px;
-    height: 105px;
-    float: left;
-    padding-top: 275px;
-    padding-left: 280px;
-/*    background-color: aqua;*/
-}
-.justAPictureResize{
-    width: 100px;
+    background-color: #263238;
+  }
+  #leftSideFooter{
+    width: 200px;
     height: 100px;
-}
-/****************** BLANK SPACE ******************/
-#blankSpace{
-    width: 1200px;
-    height: 400px;
-/*    background-color: aqua;*/
-    margin-left: auto;
-    margin-right: auto;
-}
+    float: left;
+    padding-top: 50px;
+  /*  background-color: aqua; */
 
-/****************** FOOTER ******************/
-footer{
-  width: 100%;
-  height: 150px;
-  float: left;
-  background-color: #263238;
-}
-#footerBox{
-  width: 1200px;
-  height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #263238;
-}
-#leftSideFooter{
-  width: 200px;
-  height: 100px;
-  float: left;
-  padding-top: 50px;
-/*  background-color: aqua; */
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 10px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  .icon{
+      width: 55px;
+      height: 55px;
+      margin-left: 8px;
+  }
+  #rightSideFooter{
+    width: 300px;
+    height: 50px;
+    float: left;
+    padding-top: 100px;
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 10px;
-  font-family: verdana, "Chaparral Pro";
-}
-.icon{
-    width: 55px;
-    height: 55px;
-    margin-left: 8px;
-}
-#rightSideFooter{
-  width: 300px;
-  height: 50px;
-  float: left;
-  padding-top: 100px;
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #rightSideFooter a{
+    text-align: center;
+    color: #d84315;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: CarvedRock, "Chaparral Pro";
+  }
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 16px;
-  font-family: verdana, "Chaparral Pro";
-}
-#rightSideFooter a{
-  text-align: center;
-  color: #d84315;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: CarvedRock, "Chaparral Pro";
-}
+  #centerSpaceFooter{
+    width: 700px;
+    height: 150px;
+    float: left;
+  }
+  #frsText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
 
-#centerSpaceFooter{
-  width: 700px;
-  height: 150px;
-  float: left;
-}
-#frsText{
-  width: 720px;
-  height: 50px;
-  padding-top: 25px;
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  #scdnText{
+    width: 720px;
+    height: 50px;
+    padding-top: 25px;
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 18px;
-  font-family: verdana, "Chaparral Pro";
-}
-#scdnText{
-  width: 720px;
-  height: 50px;
-  padding-top: 25px;
+    /*TEXT*/
+    text-align: center;
+    color: #d84315;
+    font-size: 18px;
+    font-family: verdana, "Chaparral Pro";
+  }
+  /*******************************************/
 
-  /*TEXT*/
-  text-align: center;
-  color: #d84315;
-  font-size: 18px;
-  font-family: verdana, "Chaparral Pro";
-}
-/*******************************************/
+  /**************** GENERAL tags *************/
+  a{
+    text-decoration: none;
+    color: #d84315;
+    font-family: CarvedRock, "Chaparral Pro";
+    font-size: 14px;
+  }
+  /*******************************************/
 
-/**************** GENERAL tags *************/
-a{
-  text-decoration: none;
-  color: #d84315;
-  font-family: CarvedRock, "Chaparral Pro";
-  font-size: 14px;
+
 }
-/*******************************************/

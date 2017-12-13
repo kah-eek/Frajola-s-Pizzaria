@@ -1,3 +1,5 @@
+DROP DATABASE pizzaria;
+
 CREATE DATABASE pizzaria;
 
 USE pizzaria;

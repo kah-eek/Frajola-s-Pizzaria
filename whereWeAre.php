@@ -4,41 +4,41 @@
     require_once("./modulo/whereWeAreDAO.php");
     require_once("./modulo/functions.php");
     /* ****************** */
-    
+
     //CONNECT TO DB
     connectToDB();
 
     //CHECK IF btnLogin EXISTS
     if(isset($_POST["btnLogin"])){
-        
+
         //GETTING FIELD DATA
         $username = $_POST["txtUsername"];
         $password = $_POST["txtPassword"];
-        
+
         if(login($username,$password)){
 
-            
+
             //STARTING SESSION VARIABLES
             session_start();
-            
+
             //GETTING EMPLOYEE'S ID
             $employee = getEmployeeIdByLogin($username,$password);
-            
+
             //SETTING INTO SESSION VARIABLE
             $_SESSION["employeesId"] = $employee["idFuncionario"];
-            
+
             //MOVING TO CMS PAGE
             header("location:./cms/cmsHome.php");
         }else{
         ?>
-            <script type="text/javascript"> 
+            <script type="text/javascript">
                 alert("Usuário ou senha incorreto!");
             </script>
         <?php
         }
     }
 
-    
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -47,16 +47,42 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/whereWeAreStyle.css">
     <link rel="shortcut icon" type="image/x-icon" href="pictures/logo/logo.png">
- 
+    <script src="./js/jquery.js"></script>
+
   </head>
   <body>
+
+    <script>
+      $(document).ready(function(){
+
+        // SHOW SITE MAP FOR ANOTHER PAGES
+        $(".logo").click(function(){
+          $(".menuItems").toggle("slow");
+          $("#menuItems").toggle("slow");
+        });
+
+      });
+    </script>
+
     <form name="whereWeAreForm" method="post" action="whereWeAre.php">
       <!-- ******************* MENU ITEMS ********************************** -->
       <header>
         <nav>
+
+
+          <!-- FOR DESKTOP -->
           <div id="logo">
+            <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+          </div>
+
+          <!-- FOR MOBILE -->
+          <div class="logo" id="logoMOBILE">
+            <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+          </div>
+
+          <div id="menuItems">
             <a href="index.php">
-                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >              
+                Home
             </a>
           </div>
 
@@ -116,11 +142,11 @@
       <!-- ********* -->
 
       <!-- ******************************************************************** -->
-      
+
       <!-- ************************** MAIN CONTENT **************************** -->
       <main>
           <section>
-              
+
               <!-- MAIN TITLE -->
               <div id="mainTitleBox">
                 <div id="mainTitle">
@@ -148,29 +174,29 @@
                     <div class="localStripBox">
                         <div class="localStripBox_NO_SHADOW">
                           <div class="localStrip">
-                              
+
                               <!-- LOCAL PICTURE -->
                               <div class="localPicture">
                                   <img class="localImg" src="<?php echo(cutPathNoEnd($item["imagemEstabelecimento"], 4)); ?>" title="<?php echo($item["logradouro"]); ?>, <?php echo($item["uf"]); ?>" alt="pequena demostração da unidade localizada no endereço <?php echo($item["logradouro"]); ?>, <?php echo($item["uf"]); ?>">
                               </div>
                               <!-- ******************* -->
-                              
+
                               <!-- LOCAL DESCRIPTION -->
                               <div class="placeDescrptn">
                                   <div class="localName">
                                       <?php echo($item["bairro"]); ?>, <?php echo($item["uf"]); ?>
                                   </div>
-                                  
+
                                   <div class="localDescription">
                                       RUA: <?php echo($item["logradouro"]); ?>, nº <?php echo($item["numero"]); ?>
                                   </div>
-                                  
+
                                   <div class="localTelephone">
                                       TELEFONE: <?php echo(setPhoneFormat($item["telefone"])); ?>
                                   </div>
                               </div>
                               <!-- ****************** -->
-                              
+
                               <!-- JUST A PICTURE -->
                               <div class="justAPicture">
                                   <img class="justAPictureResize" src="<?php echo(cutPathNoEnd($item["iconeBanda"], 4)); ?>" title="Just a bit Rock and Roll" alt="Just a bit Rock and Roll (Foto decorativa)">
@@ -178,7 +204,7 @@
                               <!-- ****************** -->
                           </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- ***************************************************************************** -->
 
                 <?php
@@ -186,14 +212,14 @@
 
 
               ?>
-              
+
           </section>
       </main>
-        
+
       <div id="blankSpace">
-        <!-- JUST ONE BLANK SPACE-->  
-      </div>  
-      
+        <!-- JUST ONE BLANK SPACE-->
+      </div>
+
       <!-- FOOTER -->
       <footer>
         <div id="footerBox">
@@ -235,4 +261,3 @@
     </form>
   </body>
 </html>
-

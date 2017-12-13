@@ -4,41 +4,41 @@
     require_once("./modulo/decadeDAO.php");
     require_once("./modulo/functions.php");
     /* ****************** */
-    
+
     //CONNECT TO DB
     connectToDB();
 
     //CHECK IF btnLogin EXISTS
     if(isset($_POST["btnLogin"])){
-        
+
         //GETTING FIELD DATA
         $username = $_POST["txtUsername"];
         $password = $_POST["txtPassword"];
-        
+
         if(login($username,$password)){
 
-            
+
             //STARTING SESSION VARIABLES
             session_start();
-            
+
             //GETTING EMPLOYEE'S ID
             $employee = getEmployeeIdByLogin($username,$password);
-            
+
             //SETTING INTO SESSION VARIABLE
             $_SESSION["employeesId"] = $employee["idFuncionario"];
-            
+
             //MOVING TO CMS PAGE
             header("location:./cms/cmsHome.php");
         }else{
         ?>
-            <script type="text/javascript"> 
+            <script type="text/javascript">
                 alert("Usuário ou senha incorreto!");
             </script>
         <?php
         }
     }
 
-    
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -47,22 +47,46 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/aboutDecadeStyle.php">
     <link rel="shortcut icon" type="image/x-icon" href="pictures/logo/logo.png">
-      
-      
+    <script src="js/jquery.js"></script>
+
   </head>
   <body>
+
+    <script>
+      $(document).ready(function(){
+
+        // SHOW SITE MAP FOR ANOTHER PAGES
+        $(".logo").click(function(){
+          $(".menuItems").toggle("slow");
+          $("#menuItems").toggle("slow");
+        });
+
+      });
+    </script>
+
     <form name="aboutDecadeForm" method="post" action="aboutDecade.php">
       <!-- ******************* MENU ITEMS ********************************** -->
       <header>
         <nav>
+
+          <!-- FOR DESKTOP -->
           <div id="logo">
+            <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+          </div>
+
+          <!-- FOR MOBILE -->
+          <div class="logo" id="logoMOBILE">
+            <img id="logoImgMOBILE" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+          </div>
+
+          <div id="menuItems">
             <a href="index.php">
-                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+                Home
             </a>
           </div>
 
           <div class="menuItems">
-            Curiosidades Anos 60, 70 e 80            
+            Curiosidades Anos 60, 70 e 80
           </div>
 
           <div class="menuItems">
@@ -117,11 +141,11 @@
       <!-- ********* -->
 
       <!-- ******************************************************************** -->
-      
+
       <!-- ************************** MAIN CONTENT **************************** -->
-      <main>
+      <div id="main">
           <section>
-              
+
               <!-- MAIN TITLE -->
               <div id="mainTitleBox">
                 <div id="mainTitle">
@@ -129,13 +153,13 @@
                 </div>
               </div>
               <!-- ************** -->
-              
+
               <?php
-                
+
                 // GETTING ITEMS FROM DB
                 $items = getActiveItems();
 
-                // KEEPING OLD DECATE 
+                // KEEPING OLD DECATE
                 $oldDecade = "";
 
                 for($i = 0; $i < mysql_num_rows($items); $i++){
@@ -145,40 +169,40 @@
                   // CHECK IF IS A ITEM WITH NEW DECADE
                   if ($item["decada"] == $oldDecade) {// ITEM WITH EXISTING DECADE
 
-                    echo(cutPathNoEnd($item["imagemPrincipal"], 5));
+                    // echo(cutPathNoEnd($item["imagemPrincipal"], 5));
                   ?>
 
                     <!-- <?php echo($item["titulo"]); ?> -->
                     <div class="StripBox">
                         <div id="<?php echo('item_'.$item['idItemPagina']); ?>">
                           <div class="strip">
-                              
+
                               <!-- DESCRIPTION -->
                               <div class="description">
-                                  
+
                                   <?php echo($item["descricao"]); ?>
 
                               </div>
                               <!-- ****************** -->
-                              
+
                               <!-- LABEL AND PICTURE -->
                               <div class="labelAndPicture">
-                                  
+
                                   <!-- LABEL ABOUT <?php echo($item["titulo"]); ?> -->
                                   <div class="label">
-                                      <strong><?php echo($item["titulo"]); ?></strong> 
+                                      <strong><?php echo($item["titulo"]); ?></strong>
                                   </div>
-                              
+
                                   <!-- PICTURE ABOUT <?php echo($item["titulo"]); ?> -->
                                   <div class="picture">
                                       <img class="img" src="<?php echo(cutPathNoEnd($item["imagemPrincipal"], 4)); ?>" title="<?php echo($item["titulo"]); ?>" alt="<?php echo($item["titulo"]); ?>">
                                   </div>
-                                  
+
                               </div>
-                              
+
                           </div>
                         </div>
-                    </div> 
+                    </div>
 
                     <?php
                       // SET OLD DECADE
@@ -189,7 +213,7 @@
                   <?php
                   }else{//ITEM WITH NEW DECADE
                   ?>
-                    
+
                     <!-- <?php echo($item["decada"]);?>'s -->
 
                     <!-- <?php echo($item["titulo"]); ?> -->
@@ -197,52 +221,52 @@
                         <span class="textShadow">ANOS <?php echo($item["decada"]);?></span>
                         <div id="<?php echo('item_'.$item['idItemPagina']); ?>">
                           <div class="strip">
-                              
+
                               <!-- DESCRIPTION -->
                               <div class="description">
-                                  
+
                                   <?php
                                     echo($item["descricao"]);
                                   ?>
 
                               </div>
                               <!-- ****************** -->
-                              
+
                               <!-- LABEL AND PICTURE -->
                               <div class="labelAndPicture">
-                                  
+
                                   <!-- LABEL ABOUT <?php echo($item["titulo"]); ?> -->
                                   <div class="label">
-                                      <strong><?php echo($item["titulo"]); ?></strong> 
+                                      <strong><?php echo($item["titulo"]); ?></strong>
                                   </div>
 
                                   <!-- PICTURE ABOUT <?php echo($item["titulo"]); ?> -->
                                   <div class="picture">
                                       <img class="img" src="<?php echo(cutPathNoEnd($item["imagemPrincipal"], 4)); ?>" title="<?php echo($item["titulo"]); ?>" alt="<?php echo($item["titulo"]); ?>">
                                   </div>
-                                  
+
                               </div>
-                              
+
                           </div>
                         </div>
                     </div>
 
-                    <!-- ***************************************************************************** --> 
+                    <!-- ***************************************************************************** -->
 
                     <?php
                       // SET OLD DECADE
                        $oldDecade = $item["decada"];
-                  }        
-                }      
+                  }
+                }
               ?>
-              
+
           </section>
-      </main>
-        
+      </div>
+
       <div id="blankSpace">
-        <!-- JUST ONE BLANK SPACE-->  
-      </div>  
-      
+        <!-- JUST ONE BLANK SPACE-->
+      </div>
+
       <!-- FOOTER -->
       <footer>
         <div id="footerBox">
@@ -284,4 +308,3 @@
     </form>
   </body>
 </html>
-
