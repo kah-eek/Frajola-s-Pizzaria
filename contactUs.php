@@ -97,7 +97,9 @@
 
               <!-- FOR DESKTOP -->
               <div id="logo">
-                <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+                <a href="index.php">
+                  <img id="logoImg" src="./pictures/logo/logo.png" title="Frajola’s Pizzaria" alt="Logo da Frajola’s Pizzaria" >
+                </a>
               </div>
 
               <!-- FOR MOBILE -->
