@@ -23,14 +23,57 @@
 				$(document).ready(function(){
 
 
-					// CHECK IF CLICK WAS OVER DELETE BUTTON
+					// CHECK IF ITEM WAS CLICKED
 					$(".deleteItem").click(function(){
 
-              var itemId = $(this).data("id");
+              // GETTING DATA FROM ITEM
+              var itemId = $(this).data("id"); // ID
+              var itemTytpe = $(this).data("type");// IF IT IS CATEGORY OR SUBCATEGORY
+
+              // CHECK IF IT IS TO DELETE CATEGORY OR SUBCATEGORY
+              if(itemTytpe == "category"){ // DELETE CATEGORY
+                var mode = "deleteCategory";
+
+              }else if(itemTytpe == "subcategory"){ // DELETE SUBCATEGORY
+                var mode = "deleteSubcategory";
+
+              }
 
 							$.ajax({
 								type:"POST",
-								url:"./controller/cmsAddProductItemController.php?mode=deleteCategory",
+								url:"./controller/cmsAddProductItemController.php?mode="+mode,
+								data:{id:itemId},
+								async:true,
+								success:function(dados){
+									$(".modal").html(dados);
+								}
+							});
+					});
+
+
+
+          // CHECK IF ITEM WAS CLICKED
+					$(".updateItem").click(function(){
+
+              // GETTING DATA FROM ITEM
+              var itemId = $(this).data("id"); // ID
+              var itemTytpe = $(this).data("type");// IF IT IS CATEGORY OR SUBCATEGORY
+
+              // CHECK IF IT IS TO UPDATE CATEGORY OR SUBCATEGORY
+              if(itemTytpe == "category"){ // UPDATE CATEGORY
+                var link = "addNewCategory.php?mode=updateCategory";
+
+              }else if(itemTytpe == "subcategory"){ // UPDATE SUBCATEGORY
+                var link = "addNewSubcategory.php?mode=updateSubcategory";
+
+              }
+
+              // RESET STYLE VALUES TO DEFAULT - MODAL
+              $(".modal").attr({"style":"width: 500px; height 200px; background-color: #212121; transition: 2s; box-shadow:1px 1px 50px #FF6E40;"});
+
+							$.ajax({
+								type:"POST",
+								url:"./modal/"+link,
 								data:{id:itemId},
 								async:true,
 								success:function(dados){
@@ -63,11 +106,11 @@
 							</div>
 
 							<div class="categoryAndSubcategoryActions">
-								<a href="#">
+								<a data-id="<?php echo($item['idCategoria']);?>" data-type="category" class="updateItem" href="#">
 									<img src="../pictures/icons/edit-validated-icon256.png" title="Editar" alt="Editar este item">
 								</a>
 
-								<a data-id="<?php echo($item['idCategoria']);?>" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
+								<a data-id="<?php echo($item['idCategoria']);?>" data-type="category" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
 									<img src="../pictures/icons/delete-icon512.png" title="Deletar" alt="Deletar este item">
 								</a>
 							</div>
@@ -98,11 +141,11 @@
 							</div>
 
 							<div class="categoryAndSubcategoryActions">
-								<a href="#">
+								<a data-id="<?php echo($item['idSubcategoria']);?>" data-type="subcategory" class="updateItem" href="#">
 									<img src="../pictures/icons/edit-validated-icon256.png" title="Editar" alt="Editar este item">
 								</a>
 
-								<a data-id="<?php echo($item['idSubategoria']);?>" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
+								<a data-id="<?php echo($item['idSubategoria']);?>" data-type="subcategory" class="deleteItem" href="#" onclick="return confirm('Tem certeza que gostaria de excluir esta categoria ?')">
 									<img src="../pictures/icons/delete-icon512.png" title="Deletar" alt="Deletar este item">
 								</a>
 							</div>

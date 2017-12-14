@@ -15,17 +15,22 @@
 
         // CLOSE MODAL WHEN CLOSE BUTTON WAS CLICKED
         $(".closeModal").click(function(){
+
+          // RESET STYLE VALUES TO DEFAULT - MODAL
+          $(".modal").attr({"style":"width: 500px; height 200px; background-color: #212121; transition-delay: 5s;"});
+
+          // CLOSE MODAL CONTAINER
           $(".modalContainer").slideToggle(1500);
         });
 
         // OPEN MANAGEMENT CATEGORIES AND SUBCATEGORIES MODAL
-        $(".showCategoriesAndSubcategories").click(function(){
-
-          // CLOSE MAIN MODAL
-          $(".modalContainer").slideToggle(1000);
-
-
-        });
+        // $(".showCategoriesAndSubcategories").click(function(){
+        //
+        //   // CLOSE MAIN MODAL
+        //   $(".modalContainer").slideToggle(1000);
+        //
+        //
+        // });
 
         // OPEN ADD NEW CATEGORIES MODAL
         $(".addNewCategory").click(function(){

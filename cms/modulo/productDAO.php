@@ -30,6 +30,17 @@
 
 		}
 
+		function deleteSubcategory($itemId){
+			$sql = "DELETE FROM tbl_subcategoria WHERE idSubcategoria = $itemId;";
+
+			// CHECK IF DELETE WAS OK INTO DATABASE
+			if (mysql_query($sql)) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
 		function getMaxClicks(){
 			$sql = "SELECT SUM(click) AS clicks FROM view_analise_marketing_clicks;";
 
@@ -75,6 +86,23 @@
 			}else{
 				return false;
 			}
+		}
+
+		function updateCategory($categoryId, $category){
+			$sql = "UPDATE tbl_categoria SET categoria = '$category' WHERE idCategoria = $categoryId;";
+
+			// CHECK IF UPDATE WAS OK INTO DATABASE
+			if (mysql_query($sql)) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		function getCategory($categoryId){
+			$sql = "SELECT * FROM tbl_categoria;";
+
+			return mysql_query($sql);
 		}
 
 		function getCategories(){

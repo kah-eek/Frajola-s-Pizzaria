@@ -32,13 +32,13 @@
         // INSERT NEW ITEM INTO DB AND CHECK IF ITEM WAS INSERTED INTO DB
         if(!addItem($title, $price, $description, $details, $pictureObj, $subcategoryId, 0 ,$active)){
           ?>
-          <script type="text/javascript">
+          <script>
             alert("Falha ao inserir novo item no Banco de Dados :("+error("31","PRODUCT_CONTROLLER"));
           </script>
           <?php
         }else{
           ?>
-          <script type="text/javascript">
+          <script>
           window.location.href = "../cms/cmsShowProductItem.php";
           </script>
           <?php
@@ -49,13 +49,13 @@
         // UPDATE ITEM INTO DATABASE AND CHECK IF ITEM WAS UPDATED INTO DATABASE
         if (!updateItem(addslashes($_GET["id"]), $title, $price, $description, $details, $pictureObj, $subcategoryId, 0 ,$active)) {
           ?>
-          <script type="text/javascript">
+          <script>
             alert("Falha ao atualizar o item no Banco de Dados :("+error("47","PRODUCT_CONTROLLER"));
           </script>
           <?php
         }else{
           ?>
-          <script type="text/javascript">
+          <script>
           window.location.href = "../cms/cmsShowProductItem.php";
           </script>
           <?php
@@ -70,14 +70,14 @@
         // INSERT NEW ITEM INTO DB AND CHECK IF ITEM WAS INSERTED INTO DATABASE
         if (!addCategory($newCatageory)) {
         ?>
-            <script type="text/javascript">
+            <script>
               alert("Falha ao inserir nova categoria no Banco de Dados :("+error("67","PRODUCT_CONTROLLER"));
               window.location.href = "../cms/cmsShowProductItem.php";
             </script>
         <?php
       }else{
       ?>
-          <script type="text/javascript">
+          <script>
               window.location.href = "../cms/cmsShowProductItem.php";
           </script>
       <?php
@@ -91,32 +91,68 @@
       // INSERT NEW ITEM INTO DB AND CHECK IF ITEM WAS INSERTED INTO DATABASE
       if (!addSubcategory($category, $newSubcatagory)) {
       ?>
-          <script type="text/javascript">
+          <script>
             alert("Falha ao inserir nova categoria no Banco de Dados :("+error("95","PRODUCT_CONTROLLER"));
             window.location.href = "../cms/cmsShowProductItem.php";
           </script>
       <?php
       }else{
       ?>
-          <script type="text/javascript">
+          <script>
               window.location.href = "../cms/cmsShowProductItem.php";
           </script>
       <?php
       }
 
-    }else if($_GET["mode"] == "deleteCategory"){
+    }else if($_GET["mode"] == "deleteCategory"){ // DELETE CATEGORY
 
       // INSERT NEW ITEM INTO DB AND CHECK IF ITEM WAS INSERTED INTO DATABASE
       if (!deleteCategory($_POST["id"])) {
       ?>
-          <script type="text/javascript">
+          <script>
             alert("Falha ao deletar a categoria no Banco de Dados :("+error("113","PRODUCT_CONTROLLER"));
             window.location.href = "../cms/cmsShowProductItem.php";
           </script>
       <?php
       }else{
       ?>
-          <script type="text/javascript">
+          <script>
+              window.location.href = "../cms/cmsShowProductItem.php";
+          </script>
+      <?php
+      }
+
+    }else if($_GET["mode"] == "deleteSubcategory"){ // DELETE SUBCATEGORY
+
+      // DELETE SUBCATEGORY INTO DB AND CHECK IF ITEM WAS DELETED INTO DATABASE
+      if(!deleteSubcategory($_POST["id"])){
+      ?>
+        <script>
+          alert("Falha ao deletar a subcategoria no Banco de Dados :("+error("130","PRODUCT_CONTROLLER"));
+          window.location.href = "../cms/cmsShowProductItem.php";
+        </script>
+      <?php
+      }else{
+      ?>
+          <script>
+              window.location.href = "../cms/cmsShowProductItem.php";
+          </script>
+      <?php
+      }
+
+    }else if ($_GET["mode"] == "updateCategory") { // UPDATE CATEGORY
+
+      // DELETE SUBCATEGORY INTO DB AND CHECK IF ITEM WAS DELETED INTO DATABASE
+      if(!updateCategory($_POST["id"], $_POST["txtCategory"])){
+      ?>
+        <script>
+          alert("Falha ao atualizar a categoria no Banco de Dados :("+error("149","PRODUCT_CONTROLLER"));
+          window.location.href = "../cms/cmsShowProductItem.php";
+        </script>
+      <?php
+      }else{
+      ?>
+          <script>
               window.location.href = "../cms/cmsShowProductItem.php";
           </script>
       <?php
